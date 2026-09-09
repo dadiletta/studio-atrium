@@ -1,0 +1,113 @@
+/* Your own rules. This file loads AFTER Tailwind and daisyUI, so anything you
+ * write here wins a tie.
+ *
+ * Keep it short. If you are writing a lot of CSS here, check whether a utility
+ * class already does it — that is what Unit 2 was for. The rules below are the
+ * ones utilities genuinely cannot express.
+ */
+
+/* ============================================================ PALETTE
+ *
+ * "…"
+ *
+ * Name the mood in a sentence — "a bright room on a Tuesday morning, nothing
+ * on the desk" — then list your colours and the job each one does. This block
+ * is what you check later decisions against.
+ *
+ *   primary   #______   the action colour: buttons, links, the icons
+ *   base-100  #______   the page ground
+ *   base-200  #______   sections and cards that step forward from the ground
+ *   neutral   #______   the dark band behind the numbers
+ */
+
+/* Redeclare the theme's slots to make them yours. Everything that asked for
+ * `primary` follows, and you never touch the markup.
+ *
+ * Change `corporate` to whichever theme you set on <html> — in every page.
+ */
+[data-theme='corporate'] {
+  /* ONE SLOT IS ALREADY FILLED IN, and the reason is the lesson.
+   *
+   * `corporate` ships #0082ce as its primary. White text on it measures
+   * 4.13:1, and the same blue as text on white measures the same 4.13:1 —
+   * both under the 4.5:1 floor this project's own README asks you to hold
+   * your body text to. That is every `btn-primary` on the site and every
+   * line of small primary-coloured text above a heading.
+   *
+   * A built-in theme is somebody else's taste, not a guarantee. Darkening it
+   * to #0072b8 is barely a different blue and measures 5.12:1. Measure yours
+   * the same way when you replace it. */
+  --color-primary: #0072b8;
+  /* --color-primary-content: #______; */
+  /* --color-neutral: #______; */
+}
+
+/* ============================================================ TYPE
+ *
+ * Two faces at most: one for headings, chosen for tone; one for body, chosen
+ * to be readable small. A business site is usually better served by a serious
+ * sans than by a display face — the personality belongs in the words. The
+ * Google Fonts <link> goes in each page's <head>, ABOVE this file.
+ */
+/*
+body { font-family: '______', system-ui, sans-serif; }
+h1, h2 { font-family: '______', system-ui, sans-serif; }
+*/
+
+/* ============================================================ THE MESH
+ *
+ * The shape beside the headline, and the one beside the case study. Three
+ * radial gradients on a linear one, in your theme's own colours — so it
+ * restyles when you change the theme, weighs nothing, and never 404s.
+ *
+ * This is the whole trick behind a lot of expensive-looking pages. Move the
+ * percentages around and watch what happens; that is the fastest way to
+ * understand what a radial gradient's arguments actually mean.
+ */
+.mesh {
+  background-color: var(--color-base-200);
+  background-image:
+    radial-gradient(at 20% 20%, color-mix(in oklch, var(--color-primary) 55%, transparent) 0px, transparent 55%),
+    radial-gradient(at 80% 10%, color-mix(in oklch, var(--color-secondary) 45%, transparent) 0px, transparent 50%),
+    radial-gradient(at 65% 85%, color-mix(in oklch, var(--color-accent) 45%, transparent) 0px, transparent 55%),
+    linear-gradient(160deg, var(--color-base-100), var(--color-base-300));
+}
+
+/* A second arrangement of the same idea, so the two shapes on the page are
+ * relatives rather than twins. */
+.mesh-alt {
+  background-image:
+    radial-gradient(at 85% 25%, color-mix(in oklch, var(--color-primary) 50%, transparent) 0px, transparent 55%),
+    radial-gradient(at 15% 75%, color-mix(in oklch, var(--color-accent) 45%, transparent) 0px, transparent 50%),
+    linear-gradient(200deg, var(--color-base-100), var(--color-base-300));
+}
+
+/* ============================================================ EVERYTHING ELSE */
+
+/* FORM LABELS AT FULL STRENGTH. daisyUI paints `.label` at 60% of the
+ * surrounding ink and `.fieldset` sets it 12px, which together measured 4.23:1
+ * on the contact form — under the 4.5:1 floor, and on the one piece of text
+ * that says what a field is for. Dimming a caption is a style choice; dimming
+ * the only name a field has is not. Keep this rule. */
+.fieldset > .label {
+  color: inherit;
+  font-size: 0.875rem;
+}
+
+/* Anchors land below the sticky navbar instead of behind it. If you change the
+ * navbar's height, change this number too. */
+:target {
+  scroll-margin-top: 5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Some readers' systems ask for less movement — a vestibular condition, or just
+ * a preference. Honour it. Keep this block. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
