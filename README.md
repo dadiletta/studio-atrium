@@ -18,6 +18,7 @@ contact.html    a contact form built properly, the other ways to reach you, and 
 styles.css      your palette, your type, the CSS mesh, the pricing switch
 js/site.js      the phone menu, the footer year, and the demo forms
 img/            favicon.svg, the icon in the browser tab
+AGENTS.md       what AI help may and may not do on this project
 ```
 
 ## Start here
@@ -126,6 +127,8 @@ have them found.
       cannot write that line, you are not allowed to use it.**
 - [ ] Every form either sends somewhere real, or says plainly that it does not.
 - [ ] If you used AI to generate any part of this, say so and say which part.
+      AI help on this project follows `AGENTS.md`: a tutor until your final
+      draft is done, then a hand with the polish.
 - [ ] It works from a fresh clone — no absolute paths to your own disk.
 - [ ] It is **pushed**.
 
