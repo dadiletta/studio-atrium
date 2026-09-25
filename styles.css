@@ -11,10 +11,10 @@
  * "…"
  *
  * Name the mood in a sentence — "a bright room on a Tuesday morning, nothing
- * on the desk" — then list your colours and the job each one does. This block
+ * on the desk" — then list your colors and the job each one does. This block
  * is what you check later decisions against.
  *
- *   primary   #______   the action colour: buttons, links, the icons
+ *   primary   #______   the action color: buttons, links, the icons
  *   base-100  #______   the page ground
  *   base-200  #______   sections and cards that step forward from the ground
  *   neutral   #______   the dark band behind the numbers
@@ -32,7 +32,7 @@
    * 4.13:1, and the same blue as text on white measures the same 4.13:1 —
    * both under the 4.5:1 floor this project's own README asks you to hold
    * your body text to. That is every `btn-primary` on the site and every
-   * line of small primary-coloured text above a heading.
+   * line of small primary-colored text above a heading.
    *
    * A built-in theme is somebody else's taste, not a guarantee. Darkening it
    * to #0072b8 is barely a different blue and measures 5.12:1. Measure yours
@@ -63,7 +63,7 @@ body {
 /* ============================================================ THE MESH
  *
  * The shape beside the headline, and the ones beside the case study and each
- * service. Three radial gradients on a linear one, in your theme's own colours
+ * service. Three radial gradients on a linear one, in your theme's own colors
  * — so it restyles when you change the theme, weighs nothing, and never 404s.
  *
  * This is the whole trick behind a lot of expensive-looking pages. Move the
@@ -88,7 +88,7 @@ body {
     linear-gradient(200deg, var(--color-base-100), var(--color-base-300));
 }
 
-/* A soft wash of the primary colour behind the top of the page — the same
+/* A soft wash of the primary color behind the top of the page — the same
  * radial-gradient idea, turned down until it is felt more than seen. */
 .hero-glow {
   position: absolute;
@@ -97,7 +97,7 @@ body {
   pointer-events: none;
 }
 
-/* The closing call to action: the primary colour with the mesh's glow inside
+/* The closing call to action: the primary color with the mesh's glow inside
  * it. `btn` on this panel is daisyUI's plain button, which is light on dark. */
 .cta-panel {
   background-color: var(--color-primary);
@@ -157,7 +157,7 @@ main:has(#yearly:checked) .price-yearly {
 /* The page you are on, marked in the nav by aria-current="page" — which is
  * also what a screen reader announces. daisyUI already paints it as the
  * active item, in the theme's own neutral pair; this only adds weight. Do not
- * recolour the text without measuring it against that neutral: primary on it
+ * recolor the text without measuring it against that neutral: primary on it
  * failed on `corporate`, whose neutral is black. */
 .menu a[aria-current='page'] {
   font-weight: 700;
@@ -186,7 +186,7 @@ html {
 }
 
 /* Some readers' systems ask for less movement — a vestibular condition, or just
- * a preference. Honour it. Keep this block. */
+ * a preference. Honor it. Keep this block. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

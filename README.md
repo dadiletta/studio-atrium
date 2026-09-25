@@ -2,10 +2,10 @@
 
 A three-page business site with a **split hero and no video at all**, pricing
 with a monthly/yearly switch, and a contact form built properly. Not a finished
-template you recolour — a professional structure you make yours, and can defend
+template you recolor — a professional structure you make yours, and can defend
 every choice in.
 
-**See it running: <https://ladiletta.github.io/studio-atrium/>** — that page is
+**See it running: <https://dadiletta.github.io/studio-atrium/>** — that page is
 built from this branch, so it is exactly what you get when you copy it.
 
 That difference is the point. A team handed a finished site rearranges it. A
@@ -57,7 +57,7 @@ img/            favicon.svg, the icon in the browser tab
 
 There is no photograph in this starter. The big shapes — beside the headline,
 the case study and each service — are `.mesh` in `styles.css`: three radial
-gradients over a linear one, in **your theme's own colours**. So they restyle
+gradients over a linear one, in **your theme's own colors**. So they restyle
 when you change the theme, they weigh nothing, and they never 404.
 
 Move the percentages around and watch what happens. It is the fastest way to
@@ -91,7 +91,7 @@ choosing one is your team's decision. To make one real: give the `<form>` an
 - **The asymmetric split.** The hero is 7 columns to 5, not 6 and 6, because a
   50/50 split of unequal things looks accidental. If you even it up, look at it
   honestly afterwards.
-- **A "trusted by" row of grey rectangles fools no one.** If you do not have
+- **A "trusted by" row of gray rectangles fools no one.** If you do not have
   real client names, delete that section rather than faking it.
 
 ## Check your own work before you hand it in
@@ -113,7 +113,7 @@ have them found.
 - [ ] There is **one** obvious call to action per page, and its label says what
       happens. Not "Click here".
 - [ ] Your palette is recorded as a comment block at the top of `styles.css`,
-      with a mood sentence and a job for each colour.
+      with a mood sentence and a job for each color.
 - [ ] Two type faces at most: one for headings, one for body.
 - [ ] Every number on the page is one you can defend. A made-up statistic on a
       real business site is a liability, not a design element.
@@ -122,7 +122,7 @@ have them found.
       guess.
 - [ ] Every image has `alt` text that says what the image is FOR. Decorative
       images take an empty `alt=""`, and the meshes are already `aria-hidden`.
-- [ ] Every image has its creator, source and licence in the footer. **If you
+- [ ] Every image has its creator, source and license in the footer. **If you
       cannot write that line, you are not allowed to use it.**
 - [ ] Every form either sends somewhere real, or says plainly that it does not.
 - [ ] If you used AI to generate any part of this, say so and say which part.
