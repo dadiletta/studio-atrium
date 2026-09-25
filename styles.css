@@ -38,27 +38,33 @@
    * to #0072b8 is barely a different blue and measures 5.12:1. Measure yours
    * the same way when you replace it. */
   --color-primary: #0072b8;
+  /* Same story, second slot. White on corporate's #00a43b green — the "On
+   * track" and "Save" badges — measures 3.29:1. #15803d measures 5.02:1. */
+  --color-success: #15803d;
   /* --color-primary-content: #______; */
   /* --color-neutral: #______; */
 }
 
 /* ============================================================ TYPE
  *
- * Two faces at most: one for headings, chosen for tone; one for body, chosen
- * to be readable small. A business site is usually better served by a serious
- * sans than by a display face — the personality belongs in the words. The
- * Google Fonts <link> goes in each page's <head>, ABOVE this file.
+ * ONE face, in several weights, and that is a choice rather than a shortcut:
+ * a business site is usually better served by a serious sans than by a
+ * display face — the personality belongs in the words. This starter ships
+ * Plus Jakarta Sans, free under the SIL Open Font License.
+ *
+ * To change it: pick one at fonts.google.com, replace the Google Fonts <link>
+ * in the <head> of EVERY page, then the name below. If you add a second face
+ * for headings, that is your limit.
  */
-/*
-body { font-family: '______', system-ui, sans-serif; }
-h1, h2 { font-family: '______', system-ui, sans-serif; }
-*/
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
 
 /* ============================================================ THE MESH
  *
- * The shape beside the headline, and the one beside the case study. Three
- * radial gradients on a linear one, in your theme's own colours — so it
- * restyles when you change the theme, weighs nothing, and never 404s.
+ * The shape beside the headline, and the ones beside the case study and each
+ * service. Three radial gradients on a linear one, in your theme's own colours
+ * — so it restyles when you change the theme, weighs nothing, and never 404s.
  *
  * This is the whole trick behind a lot of expensive-looking pages. Move the
  * percentages around and watch what happens; that is the fastest way to
@@ -73,8 +79,8 @@ h1, h2 { font-family: '______', system-ui, sans-serif; }
     linear-gradient(160deg, var(--color-base-100), var(--color-base-300));
 }
 
-/* A second arrangement of the same idea, so the two shapes on the page are
- * relatives rather than twins. */
+/* A second arrangement of the same idea, so the shapes on a page are relatives
+ * rather than twins. */
 .mesh-alt {
   background-image:
     radial-gradient(at 85% 25%, color-mix(in oklch, var(--color-primary) 50%, transparent) 0px, transparent 55%),
@@ -82,21 +88,96 @@ h1, h2 { font-family: '______', system-ui, sans-serif; }
     linear-gradient(200deg, var(--color-base-100), var(--color-base-300));
 }
 
+/* A soft wash of the primary colour behind the top of the page — the same
+ * radial-gradient idea, turned down until it is felt more than seen. */
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 50% at 85% 0%, color-mix(in oklch, var(--color-primary) 14%, transparent), transparent 70%);
+  pointer-events: none;
+}
+
+/* The closing call to action: the primary colour with the mesh's glow inside
+ * it. `btn` on this panel is daisyUI's plain button, which is light on dark. */
+.cta-panel {
+  background-color: var(--color-primary);
+  color: var(--color-primary-content);
+  background-image:
+    radial-gradient(at 10% 0%, color-mix(in oklch, var(--color-accent) 45%, transparent), transparent 55%),
+    radial-gradient(at 100% 100%, color-mix(in oklch, var(--color-secondary) 55%, transparent), transparent 50%);
+}
+
+/* ============================================================ PRICING SWITCH
+ *
+ * The monthly / yearly toggle on services.html. When the checkbox is ticked,
+ * :has() lets the page swap which price is showing — no JavaScript. */
+.price-yearly {
+  display: none;
+}
+main:has(#yearly:checked) .price-monthly {
+  display: none;
+}
+main:has(#yearly:checked) .price-yearly {
+  display: inline;
+}
+
+/* ============================================================ THE FORM
+ *
+ * BUDGET CHOICES. Radio buttons dressed as buttons: the real radio is hidden
+ * inside each label, so these two rules have to do what the browser would
+ * have — show which one is picked, and show where the keyboard is. A hidden
+ * control with no focus ring is one a keyboard user cannot find. */
+.choice:has(:checked) {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary-content);
+}
+.choice:has(:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 /* ============================================================ EVERYTHING ELSE */
 
-/* FORM LABELS AT FULL STRENGTH. daisyUI paints `.label` at 60% of the
- * surrounding ink and `.fieldset` sets it 12px, which together measured 4.23:1
- * on the contact form — under the 4.5:1 floor, and on the one piece of text
- * that says what a field is for. Dimming a caption is a style choice; dimming
- * the only name a field has is not. Keep this rule. */
-.fieldset > .label {
+/* LABELS AT FULL STRENGTH. daisyUI paints `.label` at 60% of the surrounding
+ * ink and `.fieldset` sets it 12px, which together measured 4.23:1 on the
+ * contact form — under the 4.5:1 floor, and on the one piece of text that says
+ * what a field is for. `.footer-title` gets the same 60%. Dimming a caption is
+ * a style choice; dimming the only name a field has is not. Keep this rule. */
+.fieldset .label,
+.fieldset-legend,
+.footer-title {
   color: inherit;
+  opacity: 1;
+}
+.fieldset .label {
   font-size: 0.875rem;
+}
+
+/* The page you are on, marked in the nav by aria-current="page" — which is
+ * also what a screen reader announces. daisyUI already paints it as the
+ * active item, in the theme's own neutral pair; this only adds weight. Do not
+ * recolour the text without measuring it against that neutral: primary on it
+ * failed on `corporate`, whose neutral is black. */
+.menu a[aria-current='page'] {
+  font-weight: 700;
+}
+
+/* SKIP LINK. The first thing a keyboard user reaches, and invisible until
+ * they do. It jumps past the nav to <main id="main">. Keep it. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -5rem;
+  z-index: 50;
+}
+.skip-link:focus {
+  top: 1rem;
 }
 
 /* Anchors land below the sticky navbar instead of behind it. If you change the
  * navbar's height, change this number too. */
-:target {
+[id] {
   scroll-margin-top: 5rem;
 }
 
@@ -109,5 +190,10 @@ html {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
   }
 }

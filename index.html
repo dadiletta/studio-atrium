@@ -7,23 +7,42 @@
     <meta name="description" content="One sentence about what this business does and who for. Search results show it; write it." />
 
     <!--
+      SHARING. These are what a link preview shows when somebody pastes your
+      address into a chat. og:image has to be a FULL https address to an
+      image, so it is left out until you have one to publish.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Atrium — change this to your business" />
+    <meta property="og:description" content="One sentence about what this business does and who for. Search results show it; write it." />
+
+    <!--
       THE THREE TAGS. Tailwind and daisyUI, no build step, nothing installed.
       Open this file with Live Server and start working.
 
       Two honest notes:
-        1. The last tag is Tailwind's BROWSER build. Tailwind's own docs say it
-           is "designed for development purposes only, and is not intended for
+        1. The Tailwind tag is its BROWSER build. Tailwind's own docs say it is
+           "designed for development purposes only, and is not intended for
            production." Fine while you are building. Unit 8 replaces it with a
            real built stylesheet, because publishing to a public address is
            where "development only" stops being acceptable.
-        2. These load from jsdelivr, which means jsdelivr sees a request from
-           every reader of your site. That is your call to make on your own
-           project. Read Unit 8's "what a page costs its reader" first.
+        2. These load from jsdelivr, and the font from Google, which means
+           both see a request from every reader of your site. That is your
+           call to make on your own project. Read Unit 8's "what a page costs
+           its reader" first.
+
+      After them: one typeface from Google Fonts (see TYPE in styles.css), the
+      icon in the browser tab, and your own stylesheet, last, so it wins.
     -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&display=swap" rel="stylesheet" />
+
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -38,283 +57,377 @@
       `garden`, `pastel`. Do it before you write a word — it is five seconds and
       it decides the mood everything else is judged against.
 
-      THIS IS THE ONE STARTER WITH NO VIDEO, on purpose. Its hero is a split:
-      words on one side, a shape on the other. A page does not need footage to
-      look expensive, and a business page usually reads more credible without.
-    -->
+      THIS IS THE ONE STARTER WITH NO VIDEO AND NO PHOTOGRAPHS, on purpose. Its
+      hero is a split: words on one side, a shape on the other. A page does not
+      need footage to look expensive, and a business page usually reads more
+      credible without.
 
-    <!-- ============================================================== NAV -->
-    <nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-200">
+      THE NAV IS COPIED onto every page — three copies, and they drift. Change
+      one, change all three. Unit 8's build step is the fix; until then, a
+      habit is. The phone menu is a <details>: it works with no JavaScript,
+      and js/site.js only adds "close when I tap away".
+    -->
+    <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
+
+    <nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
       <div class="navbar-start">
-        <a class="flex items-center gap-2 text-xl font-bold tracking-tight" href="index.html">
-          <!--
-            An inline SVG mark. It is text, so it recolours with the theme, and
-            it never 404s. Swap it for the logo package you build in Unit 5.
-          -->
-          <svg class="size-7 text-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2" />
-            <path d="M8 16V9l4 4 4-4v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+        <!--
+          An inline SVG mark. It is text, so it recolours with the theme, and
+          it never 404s. Swap it for the logo package you build in Unit 5 —
+          and img/favicon.svg, the tab icon, with it.
+        -->
+        <a class="flex items-center gap-2 text-xl font-extrabold tracking-tight" href="index.html">
+          <svg class="size-8 text-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2" /><path d="M8 16V9l4 4 4-4v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
           Atrium
         </a>
       </div>
-      <div class="navbar-end gap-1 md:gap-3">
-        <a class="link link-hover hidden sm:inline" href="services.html">Services</a>
-        <a class="link link-hover hidden sm:inline" href="#faq">FAQ</a>
+      <div class="navbar-end gap-2">
+        <ul class="menu menu-horizontal hidden md:flex gap-1 text-base">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="services.html#pricing">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
         <a class="btn btn-primary btn-sm md:btn-md" href="contact.html">Talk to us</a>
+        <details class="dropdown dropdown-end md:hidden">
+          <summary class="btn btn-ghost btn-square" aria-label="Site pages"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
+          <ul class="menu dropdown-content bg-base-100 border border-base-content/10 rounded-box z-40 mt-3 w-56 p-2 shadow-xl text-base">
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="services.html#pricing">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </details>
       </div>
     </nav>
 
-    <!--
-      ============================================================== HERO
-      AN ASYMMETRIC SPLIT. Text is wider than the shape beside it (7 columns to
-      5), because a 50/50 split of unequal things looks accidental. On a phone
-      it stacks, text first.
+    <main id="main">
+      <!--
+        ============================================================ HERO
+        AN ASYMMETRIC SPLIT. Text is wider than the shape beside it (7 columns
+        to 5), because a 50/50 split of unequal things looks accidental. On a
+        phone it stacks, text first.
 
-      The shape on the right is CSS — see .mesh in styles.css. It costs nothing
-      to download and it recolours with your theme, which no stock photograph
-      will do.
-    -->
-    <header class="px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-        <div class="md:col-span-7">
-          <p class="badge badge-outline badge-lg mb-6">What kind of business this is</p>
-          <h1 class="text-4xl md:text-6xl font-black leading-[1.08] tracking-tight mb-6">
-            The one sentence a client would repeat to somebody else
-          </h1>
-          <p class="text-lg md:text-xl opacity-70 mb-8 max-w-xl">
-            Two lines of support. Who you work with, and what changes for them.
-            Name the client, not the process — "we help X do Y" beats "leveraging
-            synergies" every single time.
-          </p>
-          <div class="flex flex-wrap gap-3 items-center">
-            <a class="btn btn-primary btn-lg" href="contact.html">Talk to us</a>
-            <!--
-              ONE obvious call to action. This second link is deliberately a
-              link and not a button: if you make it a button you now have two
-              buttons and the reader has to choose, which is the thing you were
-              trying to spare them.
-            -->
-            <a class="link font-semibold" href="services.html">See what we do</a>
+        The shape on the right is CSS — see .mesh in styles.css. It costs
+        nothing to download and it recolours with your theme, which no stock
+        photograph will do. The two small cards floating on it are ordinary
+        daisyUI cards, nudged out past its edges: that overlap is what makes it
+        read as a product rather than a rectangle.
+      -->
+      <header class="relative overflow-hidden">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="relative max-w-6xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-32 grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-12 items-center">
+          <div class="md:col-span-7">
+            <p class="inline-flex items-center gap-2 rounded-full border border-base-content/15 bg-base-100 px-4 py-1.5 text-sm font-semibold mb-6">
+              <span class="size-2 rounded-full bg-success" aria-hidden="true"></span>
+              What kind of business this is
+            </p>
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight mb-6">
+              The one sentence a client would <span class="text-primary">repeat to somebody else</span>
+            </h1>
+            <p class="text-lg md:text-xl opacity-80 mb-10 max-w-xl">
+              Two lines of support. Who you work with, and what changes for them.
+              Name the client, not the process — "we help X do Y" beats
+              "leveraging synergies" every single time.
+            </p>
+            <div class="flex flex-wrap gap-x-6 gap-y-4 items-center">
+              <a class="btn btn-primary btn-lg" href="contact.html">Talk to us <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+              <!--
+                ONE obvious call to action. This second link is deliberately a
+                link and not a button: if you make it a button you now have two
+                buttons and the reader has to choose, which is the thing you
+                were trying to spare them.
+              -->
+              <a class="link font-semibold" href="services.html">See what we do</a>
+            </div>
+            <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <li class="flex items-center gap-2"><svg class="size-4 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16 9-5.5 5.5L8 12"/></svg> A promise you keep</li>
+              <li class="flex items-center gap-2"><svg class="size-4 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16 9-5.5 5.5L8 12"/></svg> A second one</li>
+              <li class="flex items-center gap-2"><svg class="size-4 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16 9-5.5 5.5L8 12"/></svg> How fast you reply</li>
+            </ul>
           </div>
-        </div>
 
-        <div class="md:col-span-5">
           <!--
-            The mesh is decorative, so it is aria-hidden and has no alt text to
-            write. Decorative means "carries no information the words do not" —
-            if you replace it with a photograph of your team, that is no longer
-            true and it needs real alt text.
+            The whole composition is decorative, so it is aria-hidden: it
+            carries no information the words beside it do not. If you replace
+            it with a photograph of your team, that is no longer true and it
+            needs real alt text.
           -->
-          <div class="mesh aspect-[4/5] md:aspect-square rounded-3xl shadow-2xl" aria-hidden="true"></div>
+          <div class="md:col-span-5 relative" aria-hidden="true">
+            <div class="mesh aspect-[4/5] rounded-3xl shadow-2xl"></div>
+            <div class="card bg-base-100 shadow-xl absolute -left-4 md:-left-10 top-10 w-60">
+              <div class="card-body p-5 gap-3">
+                <div class="flex items-center justify-between">
+                  <p class="text-sm font-bold">A client project</p>
+                  <span class="badge badge-success badge-sm">On track</span>
+                </div>
+                <progress class="progress progress-primary w-full" value="68" max="100"></progress>
+                <p class="text-xs">Week 00 of 00</p>
+              </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl absolute -right-3 md:-right-8 bottom-10 w-56">
+              <div class="card-body p-5 gap-1">
+                <p class="text-3xl font-extrabold text-primary">00%</p>
+                <p class="text-sm">The one result you can prove</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <!--
-      ============================================================== PROOF
-      Names, or numbers, or nothing. A row of grey rectangles labelled "trusted
-      by" fools no one — if you do not have logos yet, delete this section.
-    -->
-    <section class="border-y border-base-200 bg-base-200/50">
-      <div class="max-w-6xl mx-auto px-6 py-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
-        <p class="text-xs font-bold uppercase tracking-widest opacity-50 w-full sm:w-auto text-center">
-          Worked with
-        </p>
-        <span class="text-lg font-bold opacity-40">Client One</span>
-        <span class="text-lg font-bold opacity-40">Client Two</span>
-        <span class="text-lg font-bold opacity-40">Client Three</span>
-        <span class="text-lg font-bold opacity-40">Client Four</span>
-      </div>
-    </section>
+      <!--
+        ============================================================ PROOF
+        Names, or numbers, or nothing. A row of grey rectangles labelled
+        "trusted by" fools no one — if you do not have clients you may name
+        yet, delete this section.
+      -->
+      <section class="border-y border-base-content/10 bg-base-200/60" aria-label="Clients">
+        <div class="max-w-6xl mx-auto px-6 py-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
+          <h2 class="text-xs font-bold uppercase tracking-widest w-full sm:w-auto text-center">Worked with</h2>
+          <span class="text-xl font-extrabold tracking-tight opacity-80">Client One</span>
+          <span class="text-xl font-extrabold tracking-tight opacity-80">Client Two</span>
+          <span class="text-xl font-extrabold tracking-tight opacity-80">Client Three</span>
+          <span class="text-xl font-extrabold tracking-tight opacity-80">Client Four</span>
+        </div>
+      </section>
 
-    <!--
-      ============================================================== SERVICES
-      Three, and keep them parallel: same shape, same length of description.
-      The icons are inline SVG for the same reason the logo is — they recolour
-      with the theme and they never 404.
-    -->
-    <section id="services" class="px-6 py-20 md:py-28 max-w-6xl mx-auto">
-      <div class="max-w-2xl mb-14">
-        <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">What we do</p>
-        <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-4">Three things, done properly</h2>
-        <p class="text-lg opacity-70">
-          Two sentences. What connects these three, and what you deliberately
-          do not do.
-        </p>
-      </div>
+      <!--
+        ============================================================ SERVICES
+        Three, and keep them parallel: same shape, same length of description.
+        The icons are inline SVG for the same reason the logo is — they
+        recolour with the theme and they never 404.
+      -->
+      <section id="services" class="px-6 py-20 md:py-28 max-w-6xl mx-auto">
+        <div class="max-w-2xl mb-14">
+          <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">What we do</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Three things, done properly</h2>
+          <p class="text-lg opacity-80">Two sentences. What connects these three, and what you deliberately do not do.</p>
+        </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <article class="card bg-base-200">
-          <div class="card-body">
-            <svg class="size-9 text-primary mb-2" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 19V6a2 2 0 012-2h9l5 5v10a2 2 0 01-2 2H6a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-              <path d="M14 4v6h6" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-            </svg>
-            <h3 class="card-title">First service</h3>
-            <p class="opacity-70">
-              Two sentences. What the client gets, and how long it takes.
-            </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="card bg-base-100 border border-base-content/10 hover:shadow-xl hover:-translate-y-1 transition">
+            <div class="card-body">
+              <span class="grid place-items-center size-12 rounded-xl bg-primary/10 text-primary mb-2"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+              <h3 class="card-title">First service</h3>
+              <p class="opacity-80">Two sentences. What the client gets, and how long it takes.</p>
+              <a class="link link-primary font-semibold inline-flex items-center gap-1 mt-2" href="services.html#first">How it works <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            </div>
+          </article>
+          <article class="card bg-base-100 border border-base-content/10 hover:shadow-xl hover:-translate-y-1 transition">
+            <div class="card-body">
+              <span class="grid place-items-center size-12 rounded-xl bg-primary/10 text-primary mb-2"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg></span>
+              <h3 class="card-title">Second service</h3>
+              <p class="opacity-80">Two sentences. What the client gets, and how long it takes.</p>
+              <a class="link link-primary font-semibold inline-flex items-center gap-1 mt-2" href="services.html#second">How it works <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            </div>
+          </article>
+          <article class="card bg-base-100 border border-base-content/10 hover:shadow-xl hover:-translate-y-1 transition">
+            <div class="card-body">
+              <span class="grid place-items-center size-12 rounded-xl bg-primary/10 text-primary mb-2"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
+              <h3 class="card-title">Third service</h3>
+              <p class="opacity-80">Two sentences. What the client gets, and how long it takes.</p>
+              <a class="link link-primary font-semibold inline-flex items-center gap-1 mt-2" href="services.html#third">How it works <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!--
+        ============================================================ NUMBERS
+        Three numbers you can defend. A made-up statistic on a real business
+        site is a liability, not a design element.
+      -->
+      <section class="bg-neutral text-neutral-content" aria-label="In numbers">
+        <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
+          <div>
+            <p class="text-5xl md:text-6xl font-extrabold mb-2">00</p>
+            <p>What this number counts</p>
           </div>
-        </article>
-
-        <article class="card bg-base-200">
-          <div class="card-body">
-            <svg class="size-9 text-primary mb-2" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2" />
-              <path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-            <h3 class="card-title">Second service</h3>
-            <p class="opacity-70">
-              Two sentences. What the client gets, and how long it takes.
-            </p>
+          <div>
+            <p class="text-5xl md:text-6xl font-extrabold mb-2">00%</p>
+            <p>What this number counts</p>
           </div>
-        </article>
-
-        <article class="card bg-base-200">
-          <div class="card-body">
-            <svg class="size-9 text-primary mb-2" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 18l5-6 4 4 7-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M15 8h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <h3 class="card-title">Third service</h3>
-            <p class="opacity-70">
-              Two sentences. What the client gets, and how long it takes.
-            </p>
+          <div>
+            <p class="text-5xl md:text-6xl font-extrabold mb-2">00</p>
+            <p>What this number counts</p>
           </div>
-        </article>
-      </div>
+        </div>
+      </section>
 
-      <p class="mt-10">
-        <a class="btn btn-outline" href="services.html">How each one works</a>
-      </p>
-    </section>
-
-    <!--
-      ============================================================== NUMBERS
-      Three numbers you can defend. A made-up statistic on a real business site
-      is a liability, not a design element.
-    -->
-    <section class="bg-neutral text-neutral-content">
-      <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
+      <!--
+        ============================================================ CASE
+        One piece of work, told as a story: what they needed, what you did,
+        what changed. One real case beats a gallery of thumbnails.
+      -->
+      <section class="max-w-6xl mx-auto px-6 py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div class="mesh mesh-alt aspect-[4/3] rounded-3xl shadow-xl order-last md:order-first" aria-hidden="true"></div>
         <div>
-          <p class="text-5xl font-black mb-2">00</p>
-          <p class="opacity-70">What this number counts</p>
+          <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">Case study</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-6">What we did for a client</h2>
+          <p class="opacity-80 mb-4">What they needed, in their words if you have them.</p>
+          <p class="opacity-80 mb-8">What you did, and what measurably changed. A number here is worth more than three adjectives.</p>
+          <dl class="grid grid-cols-2 gap-6 border-t border-base-content/10 pt-6">
+            <div>
+              <dt class="text-sm opacity-80">Before</dt>
+              <dd class="text-3xl font-extrabold">00</dd>
+            </div>
+            <div>
+              <dt class="text-sm opacity-80">After</dt>
+              <dd class="text-3xl font-extrabold text-primary">00</dd>
+            </div>
+          </dl>
         </div>
-        <div>
-          <p class="text-5xl font-black mb-2">00%</p>
-          <p class="opacity-70">What this number counts</p>
-        </div>
-        <div>
-          <p class="text-5xl font-black mb-2">00</p>
-          <p class="opacity-70">What this number counts</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!--
-      ============================================================== CASE
-      One piece of work, told as a story: what they needed, what you did, what
-      changed. One real case beats a gallery of thumbnails.
-    -->
-    <section class="max-w-6xl mx-auto px-6 py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div class="mesh mesh-alt aspect-[4/3] rounded-3xl shadow-xl order-last md:order-first" aria-hidden="true"></div>
-      <div>
-        <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">Case study</p>
-        <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-6">What we did for a client</h2>
-        <p class="opacity-70 mb-4">
-          What they needed, in their words if you have them.
-        </p>
-        <p class="opacity-70 mb-8">
-          What you did, and what measurably changed. A number here is worth more
-          than three adjectives.
-        </p>
-        <blockquote class="border-l-4 border-primary pl-4 italic opacity-80">
-          “One sentence somebody actually said.”
-          <footer class="not-italic text-sm opacity-60 mt-2">— Their name, their role</footer>
-        </blockquote>
-      </div>
-    </section>
-
-    <!--
-      ============================================================== FAQ
-      daisyUI's `collapse`, built on a hidden checkbox — which means it opens
-      and closes with no JavaScript at all, and keyboard users get it for free.
-      Answer the questions people actually ask, including what it costs.
-    -->
-    <section id="faq" class="bg-base-200 border-y border-base-300">
-      <div class="max-w-3xl mx-auto px-6 py-20 md:py-28">
-        <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-10">Questions</h2>
-
-        <div class="collapse collapse-arrow bg-base-100 mb-3">
-          <input type="checkbox" />
-          <h3 class="collapse-title font-bold">What does it cost?</h3>
-          <div class="collapse-content">
-            <p class="opacity-70">
-              Answer it. A page that will not say is a page people leave.
-            </p>
+      <!--
+        ============================================================ VOICES
+        Three people, each with a name and a role. A quote with no name on it
+        is a quote you wrote yourself, and readers know it.
+      -->
+      <section class="bg-base-200 border-y border-base-content/10">
+        <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-12 text-center">What clients say</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <figure class="card bg-base-100 shadow-sm">
+              <div class="card-body">
+                <span class="text-primary"><svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></span>
+                <blockquote class="text-lg leading-relaxed flex-1">One sentence somebody actually said. Specific beats warm.</blockquote>
+                <figcaption class="flex items-center gap-3 mt-4">
+                  <span class="grid place-items-center size-10 rounded-full bg-primary text-primary-content font-bold text-sm" aria-hidden="true">AN</span>
+                  <span><strong class="block">Their name</strong><span class="text-sm opacity-80">Their role, their organization</span></span>
+                </figcaption>
+              </div>
+            </figure>
+            <figure class="card bg-base-100 shadow-sm">
+              <div class="card-body">
+                <span class="text-primary"><svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></span>
+                <blockquote class="text-lg leading-relaxed flex-1">A second sentence, from a different kind of client.</blockquote>
+                <figcaption class="flex items-center gap-3 mt-4">
+                  <span class="grid place-items-center size-10 rounded-full bg-secondary text-secondary-content font-bold text-sm" aria-hidden="true">AN</span>
+                  <span><strong class="block">Their name</strong><span class="text-sm opacity-80">Their role, their organization</span></span>
+                </figcaption>
+              </div>
+            </figure>
+            <figure class="card bg-base-100 shadow-sm">
+              <div class="card-body">
+                <span class="text-primary"><svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></span>
+                <blockquote class="text-lg leading-relaxed flex-1">A third. If you only have one real quote, use one.</blockquote>
+                <figcaption class="flex items-center gap-3 mt-4">
+                  <span class="grid place-items-center size-10 rounded-full bg-neutral text-neutral-content font-bold text-sm" aria-hidden="true">AN</span>
+                  <span><strong class="block">Their name</strong><span class="text-sm opacity-80">Their role, their organization</span></span>
+                </figcaption>
+              </div>
+            </figure>
           </div>
         </div>
+      </section>
 
-        <div class="collapse collapse-arrow bg-base-100 mb-3">
-          <input type="checkbox" />
-          <h3 class="collapse-title font-bold">How long does it take?</h3>
-          <div class="collapse-content">
-            <p class="opacity-70">Answer it, with a range if you must.</p>
-          </div>
+      <!--
+        ============================================================ FAQ
+        <details> opens and closes with no JavaScript at all, keyboard users
+        get it for free, and a screen reader announces it properly. daisyUI's
+        `collapse` just dresses it; name="faq" makes opening one close the
+        others. Answer the questions people actually ask, including the cost.
+      -->
+      <section id="faq" class="max-w-3xl mx-auto px-6 py-20 md:py-28">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-10">Questions</h2>
+        <div class="space-y-3">
+          <details class="collapse collapse-arrow border border-base-content/10 bg-base-100" name="faq" open>
+            <summary class="collapse-title font-bold">What does it cost?</summary>
+            <div class="collapse-content"><span class="opacity-80">Answer it. A page that will not say is a page people leave.</span> <a class="link link-primary" href="services.html#pricing">See pricing</a>.</div>
+          </details>
+          <details class="collapse collapse-arrow border border-base-content/10 bg-base-100" name="faq">
+            <summary class="collapse-title font-bold">How long does it take?</summary>
+            <div class="collapse-content opacity-80">Answer it, with a range if you must.</div>
+          </details>
+          <details class="collapse collapse-arrow border border-base-content/10 bg-base-100" name="faq">
+            <summary class="collapse-title font-bold">What do you need from me?</summary>
+            <div class="collapse-content opacity-80">Answer it. This is the one that wins the job.</div>
+          </details>
+          <details class="collapse collapse-arrow border border-base-content/10 bg-base-100" name="faq">
+            <summary class="collapse-title font-bold">What if it is not working?</summary>
+            <div class="collapse-content opacity-80">Say what happens. A clear exit makes it easier to say yes.</div>
+          </details>
         </div>
+      </section>
 
-        <div class="collapse collapse-arrow bg-base-100">
-          <input type="checkbox" />
-          <h3 class="collapse-title font-bold">What do you need from me?</h3>
-          <div class="collapse-content">
-            <p class="opacity-70">Answer it. This is the one that wins the job.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--
-      ============================================================== THE ASK
-      Same ask as the hero, not a new one. A page with two different requests
-      has not decided what it wants.
-    -->
+      <!--
+        ============================================================ THE ASK
+        Same ask as the hero, not a new one. A page with two different
+        requests has not decided what it wants.
+      -->
     <section class="px-6 py-20 md:py-28">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-6">Start a conversation</h2>
-        <p class="opacity-70 mb-8 text-lg">
-          One sentence saying what happens next — who replies, and how fast.
-        </p>
-        <a class="btn btn-primary btn-lg" href="contact.html">Talk to us</a>
+      <div class="cta-panel max-w-5xl mx-auto rounded-3xl px-8 py-16 md:py-20 text-center">
+        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">Start a conversation</h2>
+        <p class="mb-8 text-lg max-w-xl mx-auto">One sentence saying what happens next — who replies, and how fast.</p>
+        <a class="btn btn-lg" href="contact.html">Talk to us</a>
       </div>
     </section>
+    </main>
 
-    <!-- ============================================================ FOOTER -->
-    <footer class="footer sm:footer-horizontal bg-base-300 text-base-content px-6 md:px-10 py-12">
-      <nav>
-        <h2 class="footer-title">Pages</h2>
-        <a class="link link-hover" href="index.html">Home</a>
-        <a class="link link-hover" href="services.html">Services</a>
-        <a class="link link-hover" href="contact.html">Contact</a>
-      </nav>
-      <nav>
-        <h2 class="footer-title">Contact</h2>
-        <a class="link link-hover" href="mailto:hello@example.com">hello@example.com</a>
-        <a class="link link-hover" href="tel:+12165550100">(216) 555-0100</a>
-        <span class="opacity-70">123 Your Street, Your City</span>
-      </nav>
-      <aside>
-        <h2 class="footer-title">Credits</h2>
+    <footer class="bg-base-200 text-base-content border-t border-base-content/10">
+      <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <a class="flex items-center gap-2 text-xl font-extrabold tracking-tight" href="index.html">
+            <svg class="size-8 text-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2" /><path d="M8 16V9l4 4 4-4v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            Atrium
+          </a>
+          <p class="mt-4 opacity-80 max-w-xs">What you do and who for, in one line.</p>
+          <div class="flex gap-2 mt-5">
+            <!-- A social link needs a name a screen reader can say. The icon is not one. -->
+            <a class="btn btn-ghost btn-square btn-sm" href="https://www.linkedin.com/" aria-label="LinkedIn"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a class="btn btn-ghost btn-square btn-sm" href="https://www.instagram.com/" aria-label="Instagram"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          </div>
+        </div>
+        <nav aria-label="Footer">
+          <h2 class="footer-title">Pages</h2>
+          <ul class="space-y-2">
+            <li><a class="link link-hover" href="index.html">Home</a></li>
+            <li><a class="link link-hover" href="services.html">Services</a></li>
+            <li><a class="link link-hover" href="services.html#pricing">Pricing</a></li>
+            <li><a class="link link-hover" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer-title">Contact</h2>
+          <address class="not-italic space-y-2">
+            <p><a class="link link-hover" href="mailto:hello@example.com">hello@example.com</a></p>
+            <p><a class="link link-hover" href="tel:+12165550100">(216) 555-0100</a></p>
+            <p>123 Your Street, Your City</p>
+          </address>
+        </div>
         <!--
-          EVERY borrowed thing goes here: creator, source, licence. Nothing on
-          this page is borrowed yet — the shapes are CSS and the icons were
-          drawn for this starter. That changes the moment you add a photograph.
+          THE SIGNUP. data-demo means js/site.js catches it and says thank you
+          instead of sending it anywhere. Point `action` at a real service and
+          remove data-demo, or delete this block. A signup that goes nowhere
+          is worse than none.
         -->
-        <p class="opacity-70 max-w-xs text-sm">
-          Every image, its creator, source and licence. This page has none yet.
-        </p>
-        <p class="opacity-70 text-sm">© 20XX Your business.</p>
-      </aside>
+        <form data-demo>
+          <h2 class="footer-title">One useful email a month</h2>
+          <label class="sr-only" for="news-email">Email address</label>
+          <div class="join w-full">
+            <input class="input join-item w-full" type="email" id="news-email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            <button class="btn btn-primary join-item" type="submit">Subscribe</button>
+          </div>
+          <p class="text-sm opacity-80 mt-2">Say what is in it. Unsubscribe any time.</p>
+          <p data-sent hidden role="status" tabindex="-1" class="text-sm mt-2 font-semibold">Thanks — the next one is yours.</p>
+        </form>
+      </div>
+
+      <!--
+        CREDITS. Nothing on this site is borrowed yet: the shapes are CSS, the
+        logo was drawn for this starter, and the icons are Lucide's (ISC
+        licence, credited below). That changes the moment you add a
+        photograph — then its creator, source and licence go here.
+      -->
+      <div class="border-t border-base-content/10">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-sm">
+          <p class="opacity-80">© <span data-year>20XX</span> Your business. Built with daisyUI and Tailwind CSS; icons by Lucide.</p>
+          <p class="opacity-80">Map © <a class="link" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</p>
+        </div>
+      </div>
     </footer>
+
+    <script src="js/site.js"></script>
   </body>
 </html>
