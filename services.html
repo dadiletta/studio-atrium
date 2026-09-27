@@ -26,11 +26,8 @@
 
     <nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
       <div class="navbar-start">
-        <!--
-          An inline SVG mark. It is text, so it recolors with the theme, and
-          it never 404s. Swap it for the logo package you build in Unit 5 —
-          and img/favicon.svg, the tab icon, with it.
-        -->
+        <!-- The logo, an inline SVG that recolors with the theme. Swap it for your
+             Unit 5 logo, and img/favicon.svg with it. -->
         <a class="flex items-center gap-2 text-xl font-extrabold tracking-tight" href="index.html">
           <svg class="size-8 text-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2" /><path d="M8 16V9l4 4 4-4v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
           Atrium
@@ -56,11 +53,8 @@
       </div>
     </nav>
 
-    <!--
-      A PAGE HEADER, not a second hero. One page gets the big treatment; the
-      rest get a clear title and get on with it. That contrast is what makes the
-      home page feel like the front door.
-    -->
+    <!-- A page header, not a second hero: only the home page gets the big
+         treatment. -->
     <header class="relative overflow-hidden bg-base-100 py-16 md:py-24 border-b border-base-content/10">
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="relative max-w-6xl mx-auto px-6">
@@ -71,13 +65,8 @@
     </header>
 
     <main id="main" class="max-w-6xl mx-auto px-6 py-8 md:py-12">
-      <!--
-        ONE SERVICE, TOLD PROPERLY, repeated three times. Each is a heading, a
-        paragraph, what is included, how long, and what it costs. Keep the
-        parts in the same order every time — a reader who learns the shape
-        once can then skim the other two. The picture side alternates, which
-        is what stops three identical blocks reading as a list.
-      -->
+      <!-- ONE SERVICE, repeated three times. Keep the parts in the same order in
+           each, so a reader who learns the shape once can skim the other two. -->
       <section id="first" class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center py-16 border-b border-base-content/10">
         <div class="mesh aspect-[4/3] rounded-3xl grid place-items-center " aria-hidden="true">
           <span class="grid place-items-center size-24 rounded-3xl bg-base-100 text-primary shadow-xl"><svg class="size-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
@@ -139,12 +128,8 @@
         </div>
       </section>
 
-      <!--
-        ============================================================ PROCESS
-        daisyUI's `steps` component. Four is the most anybody reads; if your
-        process has nine stages, this is where you find that out. Vertical on a
-        phone, horizontal from md up — one class each.
-      -->
+      <!-- ============================================================ PROCESS
+           Four steps is the most anybody reads. -->
       <section class="py-20 md:py-28">
         <div class="max-w-2xl mb-12">
           <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">How it goes</p>
@@ -158,23 +143,10 @@
         </ul>
       </section>
 
-      <!--
-        ============================================================ PRICING
-        Three tiers. The middle one is marked as the usual choice, which is a
-        real pricing-page move and only works if it is true.
-
-        `grow-0` on the paragraphs is not decoration: daisyUI lets every <p>
-        in a card-body grow, so a card with a shorter list spreads the spare
-        height between its paragraphs and the prices stop lining up across the
-        row. `mt-auto` on each button sends that space above the button
-        instead.
-
-        THE MONTHLY / YEARLY SWITCH HAS NO JAVASCRIPT. It is a checkbox, and
-        two rules in styles.css: while #yearly is ticked, hide every
-        .price-monthly and show every .price-yearly. That is :has() — a
-        stylesheet asking "is that box ticked?" Delete the switch and one set of
-        prices if you only bill one way.
-      -->
+      <!-- ============================================================ PRICING
+           Three tiers; mark the middle one only if true. Monthly/yearly is a
+           checkbox and two :has() rules in styles.css. Keep grow-0 and mt-auto:
+           they line the prices up. -->
       <section id="pricing" class="py-20 md:py-28 border-t border-base-content/10">
         <div class="text-center max-w-2xl mx-auto mb-12">
           <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">Pricing</p>
@@ -252,7 +224,8 @@
           </a>
           <p class="mt-4 opacity-80 max-w-xs">What you do and who for, in one line.</p>
           <div class="flex gap-2 mt-5">
-            <!-- A social link needs a name a screen reader can say. The icon is not one. -->
+            <!-- A social link needs a name a screen reader can say. The icon is not
+                 one. -->
             <a class="btn btn-ghost btn-square btn-sm" href="https://www.linkedin.com/" aria-label="LinkedIn"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
             <a class="btn btn-ghost btn-square btn-sm" href="https://www.instagram.com/" aria-label="Instagram"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
           </div>
@@ -274,12 +247,8 @@
             <p>123 Your Street, Your City</p>
           </address>
         </div>
-        <!--
-          THE SIGNUP. data-demo means js/site.js catches it and says thank you
-          instead of sending it anywhere. Point `action` at a real service and
-          remove data-demo, or delete this block. A signup that goes nowhere
-          is worse than none.
-        -->
+        <!-- THE SIGNUP says thank you without sending (data-demo). Point action at
+             a real service and delete data-demo, or delete this block. -->
         <form data-demo>
           <h2 class="footer-title">One useful email a month</h2>
           <label class="sr-only" for="news-email">Email address</label>
@@ -292,12 +261,8 @@
         </form>
       </div>
 
-      <!--
-        CREDITS. Nothing on this site is borrowed yet: the shapes are CSS, the
-        logo was drawn for this starter, and the icons are Lucide's (ISC
-        license, credited below). That changes the moment you add a
-        photograph — then its creator, source and license go here.
-      -->
+      <!-- CREDITS: creator, source and license for every image you add. The icons
+           are Lucide's (ISC). -->
       <div class="border-t border-base-content/10">
         <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-sm">
           <p class="opacity-80">© <span data-year>20XX</span> Your business. Built with daisyUI and Tailwind CSS; icons by Lucide.</p>
