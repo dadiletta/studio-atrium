@@ -31,9 +31,13 @@
   <body class="bg-base-100 text-base-content">
     <!-- THEME: data-theme on <html>, in all three pages. Try winter, nord, lofi.
          THE NAV is on each page twice, wide and phone: change one, change all. -->
+    <!-- ANOTHER HOME PAGE: the same site, with the nav over a photo slider.
+         Keep this one or index.html, not both, and name the keeper index.html. -->
     <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
 
-    <nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
+    <!-- THE NAV sits over the slider, then turns solid as the page scrolls
+         (.nav-over in styles.css, step 5 of js/site.js). -->
+    <nav class="navbar nav-over px-4 md:px-8" data-nav-over aria-label="Main">
       <div class="navbar-start">
         <!-- The logo, an inline SVG that recolors with the theme. Swap it for your
              Unit 5 logo, and img/favicon.svg with it. -->
@@ -63,62 +67,67 @@
     </nav>
 
     <main id="main">
-      <!-- ============================================================ HERO
-           The headline gets the full width, and the photograph sits under it
-           with two cards over its edges. Swap the photo, keep the cards. -->
-      <header class="relative overflow-hidden">
-        <div class="hero-glow" aria-hidden="true"></div>
-        <div class="relative max-w-6xl mx-auto px-6 pt-16 md:pt-24">
-          <p class="inline-flex items-center gap-2 rounded-full border border-base-content/15 bg-base-100 px-4 py-1.5 text-sm font-semibold mb-6">
-              <span class="size-2 rounded-full bg-success" aria-hidden="true"></span>
-              What kind of business this is
-            </p>
-          <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.02] tracking-tight mb-8 max-w-5xl">
-            The one sentence a client would <span class="text-primary">repeat to somebody else</span>
-          </h1>
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-end">
-            <p class="md:col-span-7 text-xl md:text-2xl opacity-80 max-w-2xl">
-              Two lines of support. Who you work with, and what changes for them.
-              Name the client, not the process — "we help X do Y" beats
-              "leveraging synergies" every single time.
-            </p>
-            <div class="md:col-span-5">
-              <div class="flex flex-wrap gap-x-6 gap-y-4 items-center">
-              <a class="btn btn-primary btn-lg" href="contact.html">Talk to us <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-              <!-- One call to action. This second one is a link, not a button, on
-                   purpose. -->
-              <a class="link font-semibold" href="services.html">See what we do</a>
-            </div>
+      <!-- ============================================================ HERO SLIDER
+         Three slides that turn every 7 seconds and stop for a hover, a focus or
+         the pause button. Each is a photo, a scrim and its words: swap all three,
+         and credit the photos. Only the first slide's heading is the page's h1. -->
+    <header class="relative bg-neutral text-white" data-nav-under data-carousel data-autoplay="7000">
+      <div class="carousel w-full h-[100svh] min-h-[38rem] max-h-[62rem]" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Highlights">
+        <div class="carousel-item relative w-full items-center" role="group" aria-roledescription="slide" aria-label="1 of 3">
+          <img class="absolute inset-0 size-full object-cover" src="img/atrium-wide.jpg" width="1600" height="900" fetchpriority="high" alt="A glass-roofed atrium with a spiral staircase" />
+          <div class="slide-scrim"></div>
+          <div class="relative w-full max-w-6xl mx-auto px-6 pt-24 pb-28">
+            <div class="max-w-4xl">
+              <p class="inline-flex items-center gap-2 rounded-full bg-black/50 px-4 py-1.5 text-sm font-semibold tracking-wide mb-8">What kind of business this is</p>
+              <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.02] tracking-tight mb-8">The one sentence a client would repeat</h1>
+              <p class="text-xl md:text-2xl mb-10 max-w-2xl">Who you work with, and what changes for them.</p>
+              <div class="flex flex-col sm:flex-row gap-3 ">
+                <a class="btn btn-lg btn-primary" href="contact.html">Talk to us</a>
+                <a class="btn btn-lg btn-outline text-white border-white/70 hover:bg-white hover:text-black" href="services.html">See what we do</a>
+              </div>
             </div>
           </div>
-          <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-              <li class="flex items-center gap-2"><svg class="size-4 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16 9-5.5 5.5L8 12"/></svg> A promise you keep</li>
-              <li class="flex items-center gap-2"><svg class="size-4 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16 9-5.5 5.5L8 12"/></svg> A second one</li>
-              <li class="flex items-center gap-2"><svg class="size-4 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16 9-5.5 5.5L8 12"/></svg> How fast you reply</li>
-            </ul>
         </div>
-
-        <div class="relative max-w-6xl mx-auto px-6 pt-14 pb-24 md:pb-32">
-          <figure class="relative">
-            <img class="rounded-3xl shadow-2xl w-full aspect-[4/3] md:aspect-[21/9] object-cover object-[50%_75%]" src="img/office-wide.jpg" width="1920" height="1080" fetchpriority="high" alt="A quiet open office: long desks, glass walls, one person at work" />
-            <div class="card bg-base-100 shadow-xl absolute -left-2 md:-left-8 top-6 md:top-10 w-56 md:w-60 hidden sm:flex" aria-hidden="true">
-              <div class="card-body p-5 gap-3">
-                <div class="flex items-center justify-between">
-                  <p class="text-sm font-bold">A client project</p>
-                  <span class="badge badge-success badge-sm">On track</span>
-                </div>
-                <progress class="progress progress-primary w-full" value="68" max="100"></progress>
-                <p class="text-xs">Week 00 of 00</p>
+        <div class="carousel-item relative w-full items-center" role="group" aria-roledescription="slide" aria-label="2 of 3">
+          <img class="absolute inset-0 size-full object-cover" src="img/workshop-wide.jpg" width="1920" height="1080" loading="lazy" alt="Sticky notes from a planning workshop on a white wall" />
+          <div class="slide-scrim"></div>
+          <div class="relative w-full max-w-6xl mx-auto px-6 pt-24 pb-28">
+            <div class="max-w-4xl">
+              <p class="inline-flex items-center gap-2 rounded-full bg-black/50 px-4 py-1.5 text-sm font-semibold tracking-wide mb-8">How we work</p>
+              <h2 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.02] tracking-tight mb-8">One workshop, a plan you can read</h2>
+              <p class="text-xl md:text-2xl mb-10 max-w-2xl">The first thing you do with a new client, in one sentence.</p>
+              <div class="flex flex-col sm:flex-row gap-3 ">
+                <a class="btn btn-lg btn-primary" href="services.html">How it works</a>
               </div>
             </div>
-            <div class="card bg-base-100 shadow-xl absolute -right-2 md:-right-8 -bottom-8 md:bottom-10 w-52 md:w-56" aria-hidden="true">
-              <div class="card-body p-5 gap-1">
-                <p class="text-3xl font-extrabold text-primary">00%</p>
-                <p class="text-sm">The one result you can prove</p>
-              </div>
-          </figure>
+          </div>
         </div>
-      </header>
+        <div class="carousel-item relative w-full items-center" role="group" aria-roledescription="slide" aria-label="3 of 3">
+          <img class="absolute inset-0 size-full object-cover" src="img/office-wide.jpg" width="1920" height="1080" loading="lazy" alt="A quiet open office with long desks and glass walls" />
+          <div class="slide-scrim"></div>
+          <div class="relative w-full max-w-6xl mx-auto px-6 pt-24 pb-28">
+            <div class="max-w-4xl">
+              <p class="inline-flex items-center gap-2 rounded-full bg-black/50 px-4 py-1.5 text-sm font-semibold tracking-wide mb-8">Case study</p>
+              <h2 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.02] tracking-tight mb-8">What we did for a client</h2>
+              <p class="text-xl md:text-2xl mb-10 max-w-2xl">The one result you can prove, with a number in it.</p>
+              <div class="flex flex-col sm:flex-row gap-3 ">
+                <a class="btn btn-lg btn-primary" href="contact.html">Start a project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-x-0 bottom-0 pb-8">
+        <div class="max-w-6xl mx-auto px-6 flex items-center justify-between gap-4" data-carousel-controls hidden>
+          <div class="flex items-center gap-2" data-dots></div>
+          <div class="flex items-center gap-2">
+            <button class="btn btn-circle btn-sm btn-ghost border border-white/60 text-white" type="button" data-pause aria-pressed="false" aria-label="Pause the slides"><svg class="size-4 i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg><svg class="size-4 i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg></button>
+            <button class="btn btn-circle btn-ghost border border-white/60 text-white" type="button" data-prev aria-label="Previous slide"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button class="btn btn-circle btn-ghost border border-white/60 text-white" type="button" data-next aria-label="Next slide"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </header>
 
       <!-- ============================================================ PROOF
            Real client names only. None you may use yet? Delete this section. -->
