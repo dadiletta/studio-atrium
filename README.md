@@ -1,7 +1,8 @@
 # Atrium — a Studio starter
 
-A three-page business site with a **split hero and no video at all**, pricing
-with a monthly/yearly switch, and a contact form built properly. Not a finished
+A four-page business site with a **split hero and no video at all**: a work
+page with a before-and-after slider, pricing with a monthly/yearly switch and a
+table that compares the plans, and a contact form built properly. Not a finished
 template you recolor — a professional structure you make yours, and can defend
 every choice in.
 
@@ -12,13 +13,15 @@ That difference is the point. A team handed a finished site rearranges it. A
 team handed a real structure builds one.
 
 ```
-index.html      hero (headline over a photo) · proof · services · numbers · case study · recent work · testimonials · FAQ · call to action
+index.html      hero (headline over a photo) · client names · services · numbers · case study · recent work · testimonials · FAQ · call to action
 index-2.html    another home: the nav over a photo slider. Keep one home
 elements.html   the parts page: copy what you want, then delete it
-services.html   three services told properly, the process, and pricing with a monthly/yearly switch
+services.html   three services told properly, the process, pricing with a monthly/yearly switch, and a table comparing the plans
+work.html       one case study with a before-and-after slider, three more jobs as photo-and-card vignettes, a client's words
 contact.html    a contact form built properly, the other ways to reach you, and a map
-styles.css      your palette, your type, the CSS mesh, the pricing switch, the carousels, the nav over the hero
-js/site.js      the phone menu, the footer year, the demo forms, the carousels, the nav over the hero
+styles.css      your palette, your type, the CSS mesh, the pricing switch, the carousels, the business parts, the effects
+js/site.js      the phone menu, the footer year, the demo forms, the carousels, the nav over the hero, the effects
+js/business.js  the before-and-after slider, the drifting client names, the spotlight on the service cards
 img/            the photographs, and favicon.svg (the icon in the browser tab)
 AGENTS.md       what AI help may and may not do on this project
 ```
@@ -32,7 +35,7 @@ AGENTS.md       what AI help may and may not do on this project
    and go back to work.
 2. Open `index.html` with **Live Server** — the **Go Live** button in the status
    bar. Not by double-clicking: see Unit 4 for why `file://` is not a website.
-3. Change `data-theme="corporate"` on the `<html>` tag — **in all three pages**.
+3. Change `data-theme="corporate"` on the `<html>` tag — **on every page**.
    Do this first. Try `winter`, `nord`, `emerald`, `lofi`, `business`, `garden`,
    `pastel`. All 35 are at
    [daisyui.com/docs/themes](https://daisyui.com/docs/themes/).
@@ -42,6 +45,17 @@ AGENTS.md       what AI help may and may not do on this project
 
 ## What is in it
 
+- **A before-and-after slider** on the Work page: drag the line between two
+  photographs of the same thing. The handle is a real `<input type="range">`
+  stretched invisibly over the photos, so a mouse, a finger, Tab and the arrow
+  keys all work, and a screen reader hears where the line is.
+- **A table that compares the plans**, under the pricing cards. It is a real
+  `<table>`: the plans are column headers (`scope="col"`), each line names its
+  row (`scope="row"`), and every tick also says *Included* to a screen reader.
+  On a phone it scrolls sideways inside its own box, with the row names pinned.
+- **Vignettes** on the Work page: each job is a photograph with a card over its
+  edge, and they swap sides down the page. A dozen Tailwind grid classes, no
+  CSS of their own; read them to see how one grid cell overlaps another.
 - **A pricing switch with no JavaScript.** The monthly/yearly toggle is a
   checkbox, and two `:has()` rules in `styles.css` swap which price shows.
 - **A FAQ with no JavaScript.** Each question is a `<details>` element, which
@@ -68,7 +82,8 @@ This one does too.
   the keeper `index.html`.
 - **`elements.html`** is the parts page: a photo slider, a quote carousel,
   tabs, pricing, a team, a timeline, steps, a photo wall, a call to action on a
-  photo, and questions. Its nav is a part too, the centered one. See it at
+  photo, questions, a before-and-after slider, a vignette, client names that
+  drift, and a table comparing the plans. Its nav is a part too, the centered one. See it at
   <https://dadiletta.github.io/studio-atrium/elements.html>. Each part sits between a `COPY FROM HERE` and a
   `TO HERE` comment: copy what you want into your pages, then **delete
   `elements.html`** before you hand in. Nothing links to it.
@@ -87,6 +102,31 @@ A slider that turns by itself has to stop for people: it holds while the
 pointer or the keyboard is on it, it has a pause button, and for anyone whose
 computer asks for less motion it never turns at all. Keep all three. Add or
 remove slides freely; every slide is one element inside the `carousel`.
+
+## The effects
+
+A business site has a few moves of its own, and this one has them. Every effect
+is switched on by an attribute or a class in the HTML, and every one is extra:
+delete it and the element simply sits there, finished. With the scripts blocked
+nothing is hidden, and for anyone whose computer asks for less motion nothing
+moves.
+
+| Put this on an element | And it |
+| --- | --- |
+| `class="mark-sweep"` | on a few words of a heading, draws a marker stroke under them as the page opens. Once per page. |
+| `data-marquee` | on the box around a list of names, makes them drift sideways in a loop. Its pause button names the box's `id` in `aria-controls`. |
+| `data-spotlight` | on a card, puts a soft light of your primary color under the mouse. |
+| `data-compare` | is the before-and-after slider. Copy the whole block from `work.html`. |
+| `class="plan-featured"` | on a pricing card, gives it a border of your theme's colors that turns three times, then rests. |
+| `data-reveal` | fades it up as it scrolls into view, once. `"left"`, `"right"` or `"zoom"` change how it arrives. |
+| `data-count` | counts up to the number in its own text: `12`, `1,200` and `40+` all work. `00` stays `00`. |
+| `data-lightbox` | on a block of photo links, opens each photo large over the page. |
+| `data-sticky-nav` | on the nav, adds a shadow once the page scrolls under it. |
+| `data-to-top` | is the back-to-top button at the bottom of every page. |
+
+The first three run in `js/business.js`, the rest in `js/site.js`. Use them
+where they help somebody read. A page where everything moves is a page that
+makes people wait, and a client is reading for the work, not the effects.
 
 ## The shapes are CSS, and that is worth understanding
 
@@ -111,11 +151,16 @@ choosing one is your team's decision. To make one real: give the `<form>` an
 
 ## Things that will bite you
 
-- **The three pages must match.** Theme, nav, footer, font. A site that
+- **The pages must match.** Theme, nav, footer, font, credits. A site that
   restyles itself between clicks reads as broken. This is the real cost of plain
   HTML, and Unit 8's build step is the fix.
 - **The nav is in there twice** on every page — a row of links for wide screens
-  and the phone dropdown. Add a page, add it to both, on all three pages.
+  and the phone dropdown. Add a page, add it to both, on every page.
+- **A before and after that do not line up.** The two photographs need the same
+  size and the same framing, or the line shows a jump. The pair here was lined
+  up by computer to the pixel. Take yours from the same spot, or edit one photo
+  into the other, as this pair was. And show your own work, never somebody
+  else's misfortune: a flood or a fire is not a business's before.
 - **A built-in theme is not a guarantee.** `corporate`'s own blue and its own
   green both fail the 4.5:1 floor with white text on them; `styles.css`
   overrides both, and says by how much. Whatever theme you pick, measure it.
@@ -134,8 +179,8 @@ Tick this yourself first — auditing a page against a written spec is a graded
 skill in its own right (`WD3.B`), and it is much better to find these than to
 have them found.
 
-- [ ] Every placeholder is gone. Search all three files for `Your`, `00`, `20XX`,
-      `Client`, `Their name` and `______`.
+- [ ] Every placeholder is gone. Search every page for `Your`, `00`, `20XX`,
+      `Client`, `Their name`, `five words` and `______`.
 - [ ] Every section is the element it should be — `nav`, `header`, `main`,
       `footer`, `article`, `address` — not a `div` wearing a class.
 - [ ] The headings outline each page. Read `h1`, `h2`, `h3` alone, in order: one
@@ -151,7 +196,9 @@ have them found.
 - [ ] Two type faces at most: one for headings, one for body.
 - [ ] Every number on the page is one you can defend. A made-up statistic on a
       real business site is a liability, not a design element.
-- [ ] Every price is real, or the pricing section is gone.
+- [ ] Every price is real, or the pricing section is gone. The cards and the
+      table that compares the plans say the same thing.
+- [ ] Every before and after is your own work, and both photos are credited.
 - [ ] Body text against its background is at least **4.5:1**. Check it — do not
       guess.
 - [ ] Every image has `alt` text that says what the image is FOR. Decorative
@@ -175,7 +222,8 @@ three tags in each file's `<head>`. Icons are from [Lucide](https://lucide.dev/)
 map is © OpenStreetMap contributors.
 
 The photographs are from Wikimedia Commons, each under a license that lets you
-use it, and the footer's "Photo credits" list says whose each one is, where it
+use it (the tape deck's before and after is Sameer Verma's photograph and
+Pittigrilli's retouch of it, cropped and lined up for the slider), and the footer's "Photo credits" list says whose each one is, where it
 came from, the license, and that it was cropped. That list is the model for
 yours: swap a picture, swap its line. The shapes are CSS and the logo was drawn
 for this starter.

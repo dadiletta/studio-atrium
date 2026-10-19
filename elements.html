@@ -36,17 +36,19 @@
 
     <!-- THE NAV, centered: the name in the middle, the links split either side.
          To use it, put it in place of the nav at the top of every page. -->
-    <nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
+    <nav data-sticky-nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
       <div class="navbar-start">
         <ul class="menu menu-horizontal hidden md:flex gap-1 text-base">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
         </ul>
         <details class="dropdown md:hidden">
           <summary class="btn btn-ghost btn-square" aria-label="Site pages"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
           <ul class="menu dropdown-content bg-base-200 rounded-box z-40 mt-3 w-56 p-2 shadow-xl text-base">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
           <li><a href="services.html#pricing">Pricing</a></li>
           <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -84,6 +86,10 @@
           <li><a class="btn btn-sm btn-soft" href="#gallery">Photo wall</a></li>
           <li><a class="btn btn-sm btn-soft" href="#cta">Call to action on a photo</a></li>
           <li><a class="btn btn-sm btn-soft" href="#faq">Questions</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#before-after">Before and after</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#vignette">Vignette</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#names">Client names</a></li>
+          <li><a class="btn btn-sm btn-soft" href="#compare">Compare the plans</a></li>
           </ul>
         </div>
       </header>
@@ -457,6 +463,145 @@
       </section>
       <!-- ==================================================== TO HERE: QUESTIONS -->
 
+      <div id="before-after" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">11 · Before and after</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">Two photos of the same thing; drag the line between them. A range input underneath, so the keyboard works too.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: BEFORE AND AFTER -->
+      <section class="max-w-4xl mx-auto px-6 py-12" aria-labelledby="ba-title">
+        <h2 id="ba-title" class="tracking-tight text-3xl md:text-4xl font-bold mb-8">Before and after</h2>
+        <!-- BEFORE AND AFTER: two photos of the same thing, from the same spot, at
+             the same size. The "before" comes first; the "after" (.compare-after)
+             sits on top, and js/business.js moves the line between them. Swap both
+             photos and both credits. Show your own work, never somebody else's
+             misfortune. -->
+        <figure>
+          <div class="compare rounded-3xl shadow-2xl" data-compare>
+            <img src="img/retouch-before.jpg" width="1200" height="1111" alt="Before: a tape deck photographed on a wooden floor, with headphones lying beside it" />
+            <img class="compare-after" src="img/retouch-after.jpg" width="1200" height="1111" alt="After: the same photograph with the deck cut out onto plain white, the floor and the headphones gone" />
+            <span class="compare-tag left-4" aria-hidden="true">Before</span>
+            <span class="compare-tag right-4" aria-hidden="true">After</span>
+            <div class="compare-line" aria-hidden="true">
+              <span class="compare-knob"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 7-5 5 5 5"/><path d="m15 7 5 5-5 5"/></svg></span>
+            </div>
+            <input type="range" min="0" max="100" value="50" aria-label="Before and after: move the line" hidden />
+          </div>
+          <figcaption class="mt-4 text-sm opacity-80">Drag the line, or press Tab to reach it and use the arrow keys.</figcaption>
+        </figure>
+      </section>
+      <!-- ==================================================== TO HERE: BEFORE AND AFTER -->
+
+      <div id="vignette" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">12 · Vignette</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">One job as a photo with a card over its edge. Stack a few and swap the sides, as work.html does.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: VIGNETTE -->
+      <section class="bg-base-200 px-6 py-20" aria-labelledby="vignette-title">
+        <div class="max-w-6xl mx-auto">
+          <h2 id="vignette-title" class="tracking-tight text-3xl md:text-4xl font-bold mb-10">A job, in a photo and a card</h2>
+          <!-- data-lightbox opens the photo large. The next one swaps sides: see work.html. -->
+          <div data-lightbox>
+            <article class="grid grid-cols-1 md:grid-cols-12 items-center">
+              <a class="group block overflow-hidden rounded-3xl shadow-xl md:col-start-1 md:col-end-9 md:row-start-1" href="img/workshop-wide.jpg" data-reveal="left"><img class="w-full aspect-[16/10] object-cover transition duration-700 group-hover:scale-105" src="img/workshop-wide.jpg" width="1920" height="1080" loading="lazy" alt="Sticky notes from a planning workshop on a white wall" /></a>
+              <div class="card bg-base-100 shadow-2xl relative z-10 -mt-12 mx-4 md:m-0 md:col-start-8 md:col-end-13 md:row-start-1" data-reveal="right">
+                <div class="card-body">
+                  <ul class="flex flex-wrap gap-2" aria-label="Services used">
+                    <li class="badge badge-soft badge-primary">First service</li>
+                  </ul>
+                  <h3 class="card-title text-2xl">Client Two: the job in five words</h3>
+                  <p class="opacity-80">Two sentences. The problem in their words, and what you did about it.</p>
+                  <p class="mt-2"><strong class="text-3xl font-extrabold text-primary" data-count>00%</strong> <span class="opacity-80">the one number that changed</span></p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- ==================================================== TO HERE: VIGNETTE -->
+
+      <div id="names" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">13 · Client names that drift</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">A row of names that loops sideways, stops for a hover and has a pause button. It sits still for anyone who asks for less motion.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: CLIENT NAMES -->
+      <!-- data-marquee makes the names drift; delete it and they sit still. The
+           pause button finds the row by its id, in aria-controls. -->
+      <section class="border-y border-base-content/10 bg-base-200/60" aria-labelledby="names-title">
+        <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center gap-x-10 gap-y-4">
+          <h2 id="names-title" class="text-xs font-bold uppercase tracking-widest shrink-0">Worked with</h2>
+          <div class="marquee flex-1 min-w-0 w-full" id="names-row" data-marquee>
+            <div class="marquee-track">
+              <ul class="text-xl font-extrabold tracking-tight">
+                <li>Client One</li>
+                <li>Client Two</li>
+                <li>Client Three</li>
+                <li>Client Four</li>
+                <li>Client Five</li>
+                <li>Client Six</li>
+              </ul>
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-circle btn-sm shrink-0" type="button" data-marquee-pause aria-controls="names-row" hidden aria-pressed="false" aria-label="Pause the client names"><svg class="size-4 i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg><svg class="size-4 i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg></button>
+        </div>
+      </section>
+      <!-- ==================================================== TO HERE: CLIENT NAMES -->
+
+      <div id="compare" class="parts-label max-w-6xl mx-auto px-6 pt-20">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-80">14 · Compare the plans</p>
+        <p class="text-sm opacity-80 max-w-2xl mt-1">A real table: the plans across the top, what each includes down the side. It scrolls sideways on a phone.</p>
+      </div>
+
+      <!-- ==================================================== COPY FROM HERE: COMPARE THE PLANS -->
+      <section class="max-w-6xl mx-auto px-6 py-12" aria-labelledby="compare-title">
+        <h2 id="compare-title" class="tracking-tight text-3xl md:text-4xl font-bold mb-8">Compare the plans</h2>
+        <!-- COMPARE THE PLANS: the cards above sell, this table answers. A real
+             <table>: the plan names are column headers (scope="col"), each line
+             names its row (scope="row"), and a tick also says "Included" to a
+             screen reader. On a phone it scrolls sideways inside its own box;
+             tabindex and the label let a keyboard do that too. Same plans, same
+             order, as the cards. -->
+        <div class="overflow-x-auto rounded-box border border-base-content/10" tabindex="0" role="region" aria-labelledby="compare-caption" data-reveal>
+          <table class="table plans min-w-[40rem]">
+            <caption id="compare-caption" class="text-left text-xl font-extrabold tracking-tight px-4 pt-5 pb-3">Compare the plans, line by line</caption>
+            <colgroup>
+              <col class="w-2/5" />
+              <col />
+              <col class="plan-col" />
+              <col />
+            </colgroup>
+            <thead>
+              <tr class="text-base text-base-content">
+                <td></td>
+                <th scope="col" class="text-center">Starter</th>
+                <th scope="col" class="text-center">Standard <span class="badge badge-primary badge-sm ml-1">Most clients</span></th>
+                <th scope="col" class="text-center">Custom</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr class="group-row"><th colspan="4" scope="rowgroup" class="text-left text-xs font-bold uppercase tracking-widest">The work</th></tr>
+              <tr><th scope="row" class="text-left font-normal">A deliverable every plan includes</th><td><svg class="size-5 text-primary mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Included</span></td><td><svg class="size-5 text-primary mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Included</span></td><td><svg class="size-5 text-primary mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Included</span></td></tr>
+              <tr><th scope="row" class="text-left font-normal">The thing that makes Standard worth more</th><td><span class="opacity-70" aria-hidden="true">—</span><span class="sr-only">Not included</span></td><td><svg class="size-5 text-primary mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Included</span></td><td><svg class="size-5 text-primary mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Included</span></td></tr>
+              <tr><th scope="row" class="text-left font-normal">Rounds of changes</th><td>00</td><td>00</td><td>As many as it takes</td></tr>
+            </tbody>
+            <tbody class="text-center">
+              <tr class="group-row"><th colspan="4" scope="rowgroup" class="text-left text-xs font-bold uppercase tracking-widest">Working together</th></tr>
+              <tr><th scope="row" class="text-left font-normal">How fast you reply</th><td>00 days</td><td>00 hours</td><td>Same day</td></tr>
+              <tr><th scope="row" class="text-left font-normal">One named person to call</th><td><span class="opacity-70" aria-hidden="true">—</span><span class="sr-only">Not included</span></td><td><svg class="size-5 text-primary mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Included</span></td><td><svg class="size-5 text-primary mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Included</span></td></tr>
+              <tr><th scope="row" class="text-left font-normal">A progress report every month</th><td><span class="opacity-70" aria-hidden="true">—</span><span class="sr-only">Not included</span></td><td><svg class="size-5 text-primary mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Included</span></td><td><svg class="size-5 text-primary mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Included</span></td></tr>
+            </tbody>
+            <tbody class="text-center">
+              <tr class="group-row"><th colspan="4" scope="rowgroup" class="text-left text-xs font-bold uppercase tracking-widest">After handover</th></tr>
+              <tr><th scope="row" class="text-left font-normal">Help when something breaks</th><td>00 days</td><td>00 days</td><td>00 days</td></tr>
+              <tr><th scope="row" class="text-left font-normal">Training for your team</th><td><span class="opacity-70" aria-hidden="true">—</span><span class="sr-only">Not included</span></td><td><span class="opacity-70" aria-hidden="true">—</span><span class="sr-only">Not included</span></td><td><svg class="size-5 text-primary mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Included</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- ==================================================== TO HERE: COMPARE THE PLANS -->
+
     </main>
 
     <footer class="bg-base-200 text-base-content border-t border-base-content/10">
@@ -479,6 +624,7 @@
           <ul class="space-y-2">
             <li><a class="link link-hover" href="index.html">Home</a></li>
             <li><a class="link link-hover" href="services.html">Services</a></li>
+            <li><a class="link link-hover" href="work.html">Work</a></li>
             <li><a class="link link-hover" href="services.html#pricing">Pricing</a></li>
             <li><a class="link link-hover" href="contact.html">Contact</a></li>
           </ul>
@@ -518,6 +664,7 @@
               <li>Atrium: <a class="link" href="https://commons.wikimedia.org/wiki/File:Atrium,_Rookery_Building,_LaSalle_Street_and_Adams_Street,_Chicago,_IL_-_52900630177.jpg">w_lemay</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>. Cropped.</li>
               <li>Workshop: <a class="link" href="https://commons.wikimedia.org/wiki/File:TechnicalWishlist_Workshop_Search_16-18_Munich_StickyNotesWall1.jpg">Jan Dittrich (WMDE)</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Cropped.</li>
               <li>Typing: <a class="link" href="https://commons.wikimedia.org/wiki/File:Typing_on_a_mac_(Unsplash).jpg">Thomas Lefebvre</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Tape deck, before and after: <a class="link" href="https://commons.wikimedia.org/wiki/File:Akai_GX-635D_tape_recorder_(16679601897).jpg">Sameer Verma</a>, retouched by <a class="link" href="https://commons.wikimedia.org/wiki/File:Akai_GX_635D_-_edit.jpg">Pittigrilli</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>. Cropped, and the original lined up with the retouch.</li>
               <li>Map: © <a class="link" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</li>
             </ul>
           </details>
@@ -525,6 +672,10 @@
       </div>
     </footer>
 
+    <!-- BACK TO TOP: hidden until js/site.js shows it, once you have scrolled. -->
+    <a class="to-top" href="#top" data-to-top hidden aria-label="Back to top"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
+
     <script src="js/site.js"></script>
+    <script src="js/business.js"></script>
   </body>
 </html>

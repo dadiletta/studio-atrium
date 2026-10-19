@@ -24,7 +24,7 @@
   <body class="bg-base-100 text-base-content">
     <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
 
-    <nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
+    <nav data-sticky-nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
       <div class="navbar-start">
         <!-- The logo, an inline SVG that recolors with the theme. Swap it for your
              Unit 5 logo, and img/favicon.svg with it. -->
@@ -37,6 +37,7 @@
         <ul class="menu menu-horizontal hidden md:flex gap-1 text-base">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
           <li><a href="services.html#pricing">Pricing</a></li>
           <li><a href="contact.html" aria-current="page">Contact</a></li>
         </ul>
@@ -46,6 +47,7 @@
           <ul class="menu dropdown-content bg-base-100 border border-base-content/10 rounded-box z-40 mt-3 w-56 p-2 shadow-xl text-base">
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
             <li><a href="services.html#pricing">Pricing</a></li>
             <li><a href="contact.html" aria-current="page">Contact</a></li>
           </ul>
@@ -177,6 +179,7 @@
           <ul class="space-y-2">
             <li><a class="link link-hover" href="index.html">Home</a></li>
             <li><a class="link link-hover" href="services.html">Services</a></li>
+            <li><a class="link link-hover" href="work.html">Work</a></li>
             <li><a class="link link-hover" href="services.html#pricing">Pricing</a></li>
             <li><a class="link link-hover" href="contact.html">Contact</a></li>
           </ul>
@@ -216,6 +219,7 @@
               <li>Atrium: <a class="link" href="https://commons.wikimedia.org/wiki/File:Atrium,_Rookery_Building,_LaSalle_Street_and_Adams_Street,_Chicago,_IL_-_52900630177.jpg">w_lemay</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>. Cropped.</li>
               <li>Workshop: <a class="link" href="https://commons.wikimedia.org/wiki/File:TechnicalWishlist_Workshop_Search_16-18_Munich_StickyNotesWall1.jpg">Jan Dittrich (WMDE)</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Cropped.</li>
               <li>Typing: <a class="link" href="https://commons.wikimedia.org/wiki/File:Typing_on_a_mac_(Unsplash).jpg">Thomas Lefebvre</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Tape deck, before and after: <a class="link" href="https://commons.wikimedia.org/wiki/File:Akai_GX-635D_tape_recorder_(16679601897).jpg">Sameer Verma</a>, retouched by <a class="link" href="https://commons.wikimedia.org/wiki/File:Akai_GX_635D_-_edit.jpg">Pittigrilli</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>. Cropped, and the original lined up with the retouch.</li>
               <li>Map: © <a class="link" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</li>
             </ul>
           </details>
@@ -223,6 +227,10 @@
       </div>
     </footer>
 
+    <!-- BACK TO TOP: hidden until js/site.js shows it, once you have scrolled. -->
+    <a class="to-top" href="#top" data-to-top hidden aria-label="Back to top"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
+
     <script src="js/site.js"></script>
+    <script src="js/business.js"></script>
   </body>
 </html>
