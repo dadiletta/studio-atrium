@@ -14,7 +14,8 @@ team handed a real structure builds one.
 
 ```
 index.html      hero (headline over a photo) · client names · services · numbers · case study · recent work · testimonials · FAQ · call to action
-index-2.html    another home: the nav over a photo slider. Keep one home
+index-2.html    another home: the nav over a photo slider
+index-3.html    a third home: dark and split, a short form beside three photos. Keep one home
 elements.html   the parts page: copy what you want, then delete it
 services.html   three services told properly, the process, pricing with a monthly/yearly switch, and a table comparing the plans
 work.html       one case study with a before-and-after slider, three more jobs as photo-and-card vignettes, a client's words
@@ -80,15 +81,18 @@ This one does too.
 
 - **`index-2.html`** is the same site with a different top: the nav sits over a
   full-screen photo slider and turns solid as you scroll. See it at
-  <https://dadiletta.github.io/studio-atrium/index-2.html>. **Keep one home, not both**: delete the other and name
-  the keeper `index.html`.
+  <https://dadiletta.github.io/studio-atrium/index-2.html>. **`index-3.html`** is a third: dark and split, a one-field form that books a
+  call beside three photos. **Keep one home**: delete the others and name
+  the keeper `index.html`. The nav's **Homes** dropdown shows each home's top;
+  delete it once you've chosen.
 - **`elements.html`** is the parts page: a photo slider, a quote carousel,
   tabs, pricing, a team, a timeline, steps, a photo wall, a call to action on a
   photo, questions, a before-and-after slider, a vignette, client names that
   drift, and a table comparing the plans. Its nav is a part too, the centered one. See it at
   <https://dadiletta.github.io/studio-atrium/elements.html>. Each part sits between a `COPY FROM HERE` and a
   `TO HERE` comment: copy what you want into your pages, then **delete
-  `elements.html`** before you hand in. Nothing links to it.
+  `elements.html`** before you hand in, and the **Elements** link in every nav
+  with it.
 
 ### How the carousels work
 

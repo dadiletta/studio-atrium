@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en" data-theme="corporate">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atrium — change this to your business</title>
+    <meta name="description" content="One sentence about what this business does and who for. Search results show it; write it." />
+
+    <!-- What a link preview shows in a chat. og:image needs a full https
+         address to an image, so add it once you have one published. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Atrium — change this to your business" />
+    <meta property="og:description" content="One sentence about what this business does and who for. Search results show it; write it." />
+
+    <!-- Tailwind and daisyUI, no build step. Open this file with Live Server.
+         Tailwind's browser build is for development only; Unit 8 replaces it.
+         Then the font, the tab icon, and your own styles.css last, so it wins. -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&display=swap" rel="stylesheet" />
+
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="bg-base-100 text-base-content">
+    <!-- THEME: data-theme on <html>, on every page. Try winter, nord, lofi.
+         THE NAV is on each page twice, wide and phone: change one, change all. -->
+    <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
+
+    <nav data-sticky-nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
+      <div class="navbar-start">
+        <!-- The logo, an inline SVG that recolors with the theme. Swap it for your
+             Unit 5 logo, and img/favicon.svg with it. -->
+        <a class="flex items-center gap-2 text-xl font-extrabold tracking-tight" href="index.html">
+          <svg class="size-8 text-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2" /><path d="M8 16V9l4 4 4-4v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          Atrium
+        </a>
+      </div>
+      <div class="navbar-end gap-2">
+        <!-- HOMES: each home page has its own hero. Keep the one you like best
+             as index.html, then delete the rest and this dropdown. -->
+        <details class="dropdown dropdown-end hidden lg:block">
+          <summary class="btn btn-ghost text-inherit text-base font-normal gap-1">Homes <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="dropdown-content bg-base-100 text-base-content border border-base-content/10 rounded-box z-40 mt-3 w-[38rem] p-3 shadow-xl">
+            <ul class="grid grid-cols-3 gap-2">
+              <li>
+                <a class="block rounded-box p-2 hover:bg-base-200 focus-visible:bg-base-200" href="index.html">
+                  <img class="aspect-video w-full rounded-field object-cover" src="img/office-wide.jpg" width="1920" height="1080" loading="lazy" alt="" />
+                  <span class="mt-2 block font-semibold">Home 1</span>
+                  <span class="block text-sm text-base-content/70">The headline first, the photo under it</span>
+                </a>
+              </li>
+              <li>
+                <a class="block rounded-box p-2 hover:bg-base-200 focus-visible:bg-base-200" href="index-2.html">
+                  <img class="aspect-video w-full rounded-field object-cover" src="img/atrium-wide.jpg" width="1600" height="900" loading="lazy" alt="" />
+                  <span class="mt-2 block font-semibold">Home 2</span>
+                  <span class="block text-sm text-base-content/70">The nav over a full-screen photo slider</span>
+                </a>
+              </li>
+              <li>
+                <a class="block rounded-box p-2 hover:bg-base-200 focus-visible:bg-base-200" href="index-3.html" aria-current="page">
+                  <img class="aspect-video w-full rounded-field object-cover" src="img/laptop.jpg" width="1200" height="900" loading="lazy" alt="" />
+                  <span class="mt-2 block font-semibold">Home 3</span>
+                  <span class="block text-sm text-base-content/70">Dark and split, a short form beside three photos</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </details>
+        <ul class="menu menu-horizontal hidden lg:flex gap-1 text-base">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="services.html#pricing">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="elements.html">Elements</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm md:btn-md" href="contact.html">Talk to us</a>
+        <details class="dropdown dropdown-end lg:hidden">
+          <summary class="btn btn-ghost text-inherit btn-square" aria-label="Site pages"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
+          <ul class="menu dropdown-content bg-base-100 text-base-content border border-base-content/10 rounded-box z-40 mt-3 w-56 p-2 shadow-xl text-base">
+            <li class="menu-title">Homes</li>
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="index-2.html">Home 2</a></li>
+            <li><a href="index-3.html" aria-current="page">Home 3</a></li>
+            <li class="menu-title">Pages</li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html#pricing">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="elements.html">Elements</a></li>
+          </ul>
+        </details>
+      </div>
+    </nav>
+
+    <main id="main">
+      <!-- ============================================================ HERO
+           Split and dark: the words and a short form on the left, three photos
+           on the right. The form asks for one thing, an email, and books the call. -->
+      <header class="bg-neutral text-neutral-content">
+        <div class="max-w-6xl mx-auto px-6 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-widest opacity-80 mb-5">What kind of business this is</p>
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight mb-6">
+              The one sentence a client would repeat to somebody else
+            </h1>
+            <p class="text-lg md:text-xl opacity-85 max-w-xl mb-8">
+              Two lines of support. Who you work with, and what changes for them
+              in the first month.
+            </p>
+
+            <!-- Says thank you without sending (data-demo). Point action at a
+                 real service and delete data-demo, or swap it for a button. -->
+            <form class="max-w-md" data-demo>
+              <label class="block text-sm font-semibold mb-2" for="call-email">Book a 20-minute call</label>
+              <div class="join w-full">
+                <input class="input join-item w-full text-base-content" type="email" id="call-email" name="email" required autocomplete="email" placeholder="you@example.com" />
+                <button class="btn btn-primary join-item" type="submit">Book it <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+              </div>
+              <p data-sent hidden role="status" tabindex="-1" class="mt-3 font-semibold">Thanks. We will write within a day to pick a time.</p>
+            </form>
+
+            <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm">
+              <div>
+                <p class="flex gap-0.5" aria-hidden="true"><svg class="size-4 text-warning" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="size-4 text-warning" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="size-4 text-warning" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="size-4 text-warning" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="size-4 text-warning" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></p>
+                <p class="opacity-80 mt-1">0.0 from 00 client reviews</p>
+              </div>
+              <div class="sm:border-l sm:border-neutral-content/20 sm:pl-8">
+                <p class="text-2xl font-extrabold">00</p>
+                <p class="opacity-80">projects delivered</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Three photos: one tall, two stacked. Swap all three for your own. -->
+          <div class="grid grid-cols-2 gap-4" aria-hidden="true">
+            <img class="row-span-2 w-full h-full min-h-80 object-cover rounded-3xl" src="img/laptop.jpg" width="1200" height="900" fetchpriority="high" alt="" />
+            <img class="w-full aspect-square object-cover rounded-3xl" src="img/workshop-wide.jpg" width="1920" height="1080" alt="" />
+            <img class="w-full aspect-square object-cover rounded-3xl" src="img/typing.jpg" width="1200" height="900" alt="" />
+          </div>
+        </div>
+      </header>
+
+      <!-- ============================================================ PROOF
+           Real client names only. None you may use yet? Delete this section.
+           data-marquee makes the names drift; delete it and they sit still. -->
+      <section class="border-y border-base-content/10 bg-base-200/60" aria-labelledby="clients-title">
+        <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center gap-x-10 gap-y-4">
+          <h2 id="clients-title" class="text-xs font-bold uppercase tracking-widest shrink-0">Worked with</h2>
+          <div class="marquee flex-1 min-w-0 w-full" id="clients" data-marquee>
+            <div class="marquee-track">
+              <ul class="text-xl font-extrabold tracking-tight">
+                <li>Client One</li>
+                <li>Client Two</li>
+                <li>Client Three</li>
+                <li>Client Four</li>
+                <li>Client Five</li>
+                <li>Client Six</li>
+              </ul>
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-circle btn-sm shrink-0" type="button" data-marquee-pause aria-controls="clients" hidden aria-pressed="false" aria-label="Pause the client names"><svg class="size-4 i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg><svg class="size-4 i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg></button>
+        </div>
+      </section>
+
+      <!-- ============================================================ SERVICES
+           Three, and parallel: same shape, same length of description. -->
+      <section id="services" class="px-6 py-20 md:py-28 max-w-6xl mx-auto">
+        <div class="max-w-2xl mb-14">
+          <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">What we do</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Three things, done properly</h2>
+          <p class="text-lg opacity-80">Two sentences. What connects these three, and what you deliberately do not do.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="card bg-base-100 border border-base-content/10 hover:shadow-xl hover:-translate-y-1 transition" data-spotlight data-reveal>
+            <div class="card-body">
+              <span class="grid place-items-center size-12 rounded-xl bg-primary/10 text-primary mb-2"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+              <h3 class="card-title">First service</h3>
+              <p class="opacity-80">Two sentences. What the client gets, and how long it takes.</p>
+              <a class="link link-primary font-semibold inline-flex items-center gap-1 mt-2" href="services.html#first">How it works <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            </div>
+          </article>
+          <article class="card bg-base-100 border border-base-content/10 hover:shadow-xl hover:-translate-y-1 transition" data-spotlight data-reveal>
+            <div class="card-body">
+              <span class="grid place-items-center size-12 rounded-xl bg-primary/10 text-primary mb-2"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg></span>
+              <h3 class="card-title">Second service</h3>
+              <p class="opacity-80">Two sentences. What the client gets, and how long it takes.</p>
+              <a class="link link-primary font-semibold inline-flex items-center gap-1 mt-2" href="services.html#second">How it works <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            </div>
+          </article>
+          <article class="card bg-base-100 border border-base-content/10 hover:shadow-xl hover:-translate-y-1 transition" data-spotlight data-reveal>
+            <div class="card-body">
+              <span class="grid place-items-center size-12 rounded-xl bg-primary/10 text-primary mb-2"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
+              <h3 class="card-title">Third service</h3>
+              <p class="opacity-80">Two sentences. What the client gets, and how long it takes.</p>
+              <a class="link link-primary font-semibold inline-flex items-center gap-1 mt-2" href="services.html#third">How it works <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================ NUMBERS
+           Three numbers you can defend, or delete them. -->
+      <section class="bg-neutral text-neutral-content" aria-label="In numbers">
+        <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
+          <div>
+            <p class="text-5xl md:text-6xl font-extrabold mb-2" data-count>00</p>
+            <p>What this number counts</p>
+          </div>
+          <div>
+            <p class="text-5xl md:text-6xl font-extrabold mb-2" data-count>00%</p>
+            <p>What this number counts</p>
+          </div>
+          <div>
+            <p class="text-5xl md:text-6xl font-extrabold mb-2" data-count>00</p>
+            <p>What this number counts</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ CASE
+           One piece of work as a story: what they needed, what you did, what
+           changed. -->
+      <section class="max-w-6xl mx-auto px-6 py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <img class="aspect-[4/3] w-full object-cover rounded-3xl shadow-xl order-last md:order-first" src="img/laptop.jpg" data-reveal="left" width="1200" height="900" loading="lazy" alt="A designer at a laptop by a sunny window" />
+        <div>
+          <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">Case study</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-6">What we did for a client</h2>
+          <p class="opacity-80 mb-4">What they needed, in their words if you have them.</p>
+          <p class="opacity-80 mb-4">What you did, and what measurably changed. A number here is worth more than three adjectives.</p>
+          <a class="link link-primary font-semibold inline-flex items-center gap-1 mb-8" href="work.html#case">Read the whole story <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <dl class="grid grid-cols-2 gap-6 border-t border-base-content/10 pt-6">
+            <div>
+              <dt class="text-sm opacity-80">Before</dt>
+              <dd class="text-3xl font-extrabold" data-count>00</dd>
+            </div>
+            <div>
+              <dt class="text-sm opacity-80">After</dt>
+              <dd class="text-3xl font-extrabold text-primary" data-count>00</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============================================================ CAROUSEL
+           Swipe it, scroll it, or use the arrows. One <figure> per slide: add,
+           remove or reorder them. js/site.js adds the arrows and the dots. -->
+      <section class="py-20 md:py-28 border-t border-base-content/10" aria-labelledby="work-title">
+        <div class="max-w-6xl mx-auto px-6" data-carousel>
+          <div class="flex flex-wrap items-end justify-between gap-6 mb-10">
+            <div class="max-w-2xl">
+              <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">Recent work</p>
+              <h2 id="work-title" class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Five projects, one line each</h2>
+              <p class="text-lg opacity-80">Two sentences. What these have in common, and which one to read first.</p>
+              <a class="link link-primary font-semibold inline-flex items-center gap-1 mt-3" href="work.html">See all the work <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            </div>
+            <div class="flex items-center gap-2" data-carousel-controls hidden>
+          <button class="btn btn-circle btn-outline" type="button" data-prev aria-label="Previous"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+          <button class="btn btn-circle btn-outline" type="button" data-next aria-label="Next"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+          </div>
+          <div class="carousel gap-6 w-full" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Recent projects">
+          <figure class="carousel-item flex-col w-[80%] sm:w-[45%] md:w-[calc((100%-3rem)/3)]">
+            <img class="rounded-box aspect-[4/5] w-full object-cover shadow-lg" src="img/atrium-wide.jpg" width="1600" height="900" loading="lazy" alt="A glass-roofed atrium with a spiral staircase" />
+            <figcaption class="mt-3 text-sm opacity-80"><strong>Client One.</strong> What you did, and the one number that changed.</figcaption>
+          </figure>
+          <figure class="carousel-item flex-col w-[80%] sm:w-[45%] md:w-[calc((100%-3rem)/3)]">
+            <img class="rounded-box aspect-[4/5] w-full object-cover shadow-lg" src="img/workshop-wide.jpg" width="1920" height="1080" loading="lazy" alt="Sticky notes from a planning workshop on a white wall" />
+            <figcaption class="mt-3 text-sm opacity-80"><strong>Client Two.</strong> A workshop, and what it decided.</figcaption>
+          </figure>
+          <figure class="carousel-item flex-col w-[80%] sm:w-[45%] md:w-[calc((100%-3rem)/3)]">
+            <img class="rounded-box aspect-[4/5] w-full object-cover shadow-lg" src="img/typing.jpg" width="1200" height="900" loading="lazy" alt="Hands typing on a laptop" />
+            <figcaption class="mt-3 text-sm opacity-80"><strong>Client Three.</strong> Built in six weeks. Say what it does.</figcaption>
+          </figure>
+          <figure class="carousel-item flex-col w-[80%] sm:w-[45%] md:w-[calc((100%-3rem)/3)]">
+            <img class="rounded-box aspect-[4/5] w-full object-cover shadow-lg" src="img/office-wide.jpg" width="1920" height="1080" loading="lazy" alt="A quiet open office with long desks" />
+            <figcaption class="mt-3 text-sm opacity-80"><strong>Client Four.</strong> A new home for their team.</figcaption>
+          </figure>
+          <figure class="carousel-item flex-col w-[80%] sm:w-[45%] md:w-[calc((100%-3rem)/3)]">
+            <img class="rounded-box aspect-[4/5] w-full object-cover shadow-lg" src="img/laptop.jpg" width="1200" height="900" loading="lazy" alt="A designer at a laptop by a window" />
+            <figcaption class="mt-3 text-sm opacity-80"><strong>Client Five.</strong> The smallest job, the happiest client.</figcaption>
+          </figure>
+          </div>
+          <div class="flex justify-center gap-2 mt-8" data-dots></div>
+        </div>
+      </section>
+
+      <!-- ============================================================ VOICES
+           Three real people, each with a name and a role. -->
+      <section class="bg-base-200 border-y border-base-content/10">
+        <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-12 text-center">What clients say</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <figure class="card bg-base-100 shadow-sm" data-reveal>
+              <div class="card-body">
+                <span class="text-primary"><svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></span>
+                <blockquote class="text-lg leading-relaxed flex-1">One sentence somebody actually said. Specific beats warm.</blockquote>
+                <figcaption class="flex items-center gap-3 mt-4">
+                  <span class="grid place-items-center size-10 rounded-full bg-primary text-primary-content font-bold text-sm" aria-hidden="true">AN</span>
+                  <span><strong class="block">Their name</strong><span class="text-sm opacity-80">Their role, their organization</span></span>
+                </figcaption>
+              </div>
+            </figure>
+            <figure class="card bg-base-100 shadow-sm" data-reveal>
+              <div class="card-body">
+                <span class="text-primary"><svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></span>
+                <blockquote class="text-lg leading-relaxed flex-1">A second sentence, from a different kind of client.</blockquote>
+                <figcaption class="flex items-center gap-3 mt-4">
+                  <span class="grid place-items-center size-10 rounded-full bg-secondary text-secondary-content font-bold text-sm" aria-hidden="true">AN</span>
+                  <span><strong class="block">Their name</strong><span class="text-sm opacity-80">Their role, their organization</span></span>
+                </figcaption>
+              </div>
+            </figure>
+            <figure class="card bg-base-100 shadow-sm" data-reveal>
+              <div class="card-body">
+                <span class="text-primary"><svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></span>
+                <blockquote class="text-lg leading-relaxed flex-1">A third. If you only have one real quote, use one.</blockquote>
+                <figcaption class="flex items-center gap-3 mt-4">
+                  <span class="grid place-items-center size-10 rounded-full bg-neutral text-neutral-content font-bold text-sm" aria-hidden="true">AN</span>
+                  <span><strong class="block">Their name</strong><span class="text-sm opacity-80">Their role, their organization</span></span>
+                </figcaption>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ FAQ
+           The questions people actually ask, including the cost. name="faq" makes
+           opening one close the others. -->
+      <section id="faq" class="max-w-3xl mx-auto px-6 py-20 md:py-28">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-10">Questions</h2>
+        <div class="space-y-3">
+          <details class="collapse collapse-arrow border border-base-content/10 bg-base-100" name="faq" open>
+            <summary class="collapse-title font-bold">What does it cost?</summary>
+            <div class="collapse-content"><span class="opacity-80">Answer it. A page that will not say is a page people leave.</span> <a class="link link-primary" href="services.html#pricing">See pricing</a>.</div>
+          </details>
+          <details class="collapse collapse-arrow border border-base-content/10 bg-base-100" name="faq">
+            <summary class="collapse-title font-bold">How long does it take?</summary>
+            <div class="collapse-content opacity-80">Answer it, with a range if you must.</div>
+          </details>
+          <details class="collapse collapse-arrow border border-base-content/10 bg-base-100" name="faq">
+            <summary class="collapse-title font-bold">What do you need from me?</summary>
+            <div class="collapse-content opacity-80">Answer it. This is the one that wins the job.</div>
+          </details>
+          <details class="collapse collapse-arrow border border-base-content/10 bg-base-100" name="faq">
+            <summary class="collapse-title font-bold">What if it is not working?</summary>
+            <div class="collapse-content opacity-80">Say what happens. A clear exit makes it easier to say yes.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ============================================================ THE ASK
+           The same ask as the hero, not a new one. -->
+    <section class="px-6 py-20 md:py-28">
+      <div class="cta-panel max-w-5xl mx-auto rounded-3xl px-8 py-16 md:py-20 text-center">
+        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">Start a conversation</h2>
+        <p class="mb-8 text-lg max-w-xl mx-auto">One sentence saying what happens next — who replies, and how fast.</p>
+        <a class="btn btn-lg" href="contact.html">Talk to us</a>
+      </div>
+    </section>
+    </main>
+
+    <footer class="bg-base-200 text-base-content border-t border-base-content/10">
+      <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <a class="flex items-center gap-2 text-xl font-extrabold tracking-tight" href="index.html">
+            <svg class="size-8 text-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2" /><path d="M8 16V9l4 4 4-4v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            Atrium
+          </a>
+          <p class="mt-4 opacity-80 max-w-xs">What you do and who for, in one line.</p>
+          <div class="flex gap-2 mt-5">
+            <!-- A social link needs a name a screen reader can say. The icon is not
+                 one. -->
+            <a class="btn btn-ghost btn-square btn-sm" href="https://www.linkedin.com/" aria-label="LinkedIn"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a class="btn btn-ghost btn-square btn-sm" href="https://www.instagram.com/" aria-label="Instagram"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          </div>
+        </div>
+        <nav aria-label="Footer">
+          <h2 class="footer-title">Pages</h2>
+          <ul class="space-y-2">
+            <li><a class="link link-hover" href="index.html">Home</a></li>
+            <li><a class="link link-hover" href="services.html">Services</a></li>
+            <li><a class="link link-hover" href="work.html">Work</a></li>
+            <li><a class="link link-hover" href="services.html#pricing">Pricing</a></li>
+            <li><a class="link link-hover" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer-title">Contact</h2>
+          <address class="not-italic space-y-2">
+            <p><a class="link link-hover" href="mailto:hello@example.com">hello@example.com</a></p>
+            <p><a class="link link-hover" href="tel:+12165550100">(216) 555-0100</a></p>
+            <p>123 Your Street, Your City</p>
+          </address>
+        </div>
+        <!-- THE SIGNUP says thank you without sending (data-demo). Point action at
+             a real service and delete data-demo, or delete this block. -->
+        <form data-demo>
+          <h2 class="footer-title">One useful email a month</h2>
+          <label class="sr-only" for="news-email">Email address</label>
+          <div class="join w-full">
+            <input class="input join-item w-full" type="email" id="news-email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            <button class="btn btn-primary join-item" type="submit">Subscribe</button>
+          </div>
+          <p class="text-sm opacity-80 mt-2">Say what is in it. Unsubscribe any time.</p>
+          <p data-sent hidden role="status" tabindex="-1" class="text-sm mt-2 font-semibold">Thanks — the next one is yours.</p>
+        </form>
+      </div>
+
+      <!-- CREDITS: creator, source, license and changes for every borrowed thing.
+           Swap a picture, swap its line. Can't write the line? Don't use it. -->
+      <div class="border-t border-base-content/10">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-start md:justify-between gap-4 text-sm">
+          <p class="opacity-80">© <span data-year>20XX</span> Your business. Built with daisyUI and Tailwind CSS; icons by Lucide.</p>
+          <details class="md:max-w-xl">
+            <summary class="cursor-pointer link link-hover opacity-80">Photo credits</summary>
+            <ul class="mt-3 space-y-1 opacity-80">
+              <li>Office: <a class="link" href="https://commons.wikimedia.org/wiki/File:Working_in_open_office_space_(Unsplash).jpg">Crew</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Laptop: <a class="link" href="https://commons.wikimedia.org/wiki/File:Man_at_a_laptop_in_an_office_(Unsplash).jpg">Bench Accounting</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Atrium: <a class="link" href="https://commons.wikimedia.org/wiki/File:Atrium,_Rookery_Building,_LaSalle_Street_and_Adams_Street,_Chicago,_IL_-_52900630177.jpg">w_lemay</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>. Cropped.</li>
+              <li>Workshop: <a class="link" href="https://commons.wikimedia.org/wiki/File:TechnicalWishlist_Workshop_Search_16-18_Munich_StickyNotesWall1.jpg">Jan Dittrich (WMDE)</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Cropped.</li>
+              <li>Typing: <a class="link" href="https://commons.wikimedia.org/wiki/File:Typing_on_a_mac_(Unsplash).jpg">Thomas Lefebvre</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Cropped.</li>
+              <li>Tape deck, before and after: <a class="link" href="https://commons.wikimedia.org/wiki/File:Akai_GX-635D_tape_recorder_(16679601897).jpg">Sameer Verma</a>, retouched by <a class="link" href="https://commons.wikimedia.org/wiki/File:Akai_GX_635D_-_edit.jpg">Pittigrilli</a>, Wikimedia Commons, <a class="link" href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>. Cropped, and the original lined up with the retouch.</li>
+              <li>Map: © <a class="link" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </footer>
+
+    <!-- BACK TO TOP: hidden until js/site.js shows it, once you have scrolled. -->
+    <a class="to-top" href="#top" data-to-top hidden aria-label="Back to top"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
+
+    <script src="js/site.js"></script>
+    <script src="js/business.js"></script>
+  </body>
+</html>
