@@ -42,7 +42,10 @@ AGENTS.md       what AI help may and may not do on this project
    Do this first. Try `winter`, `nord`, `emerald`, `lofi`, `business`, `garden`,
    `pastel`. All 35 are at
    [daisyui.com/docs/themes](https://daisyui.com/docs/themes/).
-4. Replace the words. Every one of them.
+4. Replace the words. Every one of them. Each part of a page opens and closes
+   with a label, like `<!-- ===== HERO ===== -->` and
+   `<!-- ===== END HERO ===== -->`, and `styles.css` is labeled the same way.
+   Search for one (Ctrl+F, or Cmd+F on a Mac) to jump to it.
 5. Commit as you go. Push at least once a session — a commit is local until you
    push it.
 

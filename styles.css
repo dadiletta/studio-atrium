@@ -1,9 +1,8 @@
 /* Your own rules. This file loads after Tailwind and daisyUI, so it wins a tie.
  * Reach for a utility class first; write CSS here when no utility can do it. */
 
-/* ============================================================ PALETTE
- *
- * "…"
+/* ===== PALETTE ===== */
+/* "…"
  *
  * Name the mood in a sentence — "a bright room on a Tuesday morning, nothing
  * on the desk" — then list your colors and the job each one does. This block
@@ -12,8 +11,7 @@
  *   primary   #______   the action color: buttons, links, the icons
  *   base-100  #______   the page ground
  *   base-200  #______   sections and cards that step forward from the ground
- *   neutral   #______   the dark band behind the numbers
- */
+ *   neutral   #______   the dark band behind the numbers */
 
 /* Redeclare the theme's colors here to make them yours. Change `corporate` to the
  * theme on <html>, in every page. Measure both: white on your primary, and your
@@ -28,18 +26,18 @@
   /* --color-primary-content: #______; */
   /* --color-neutral: #______; */
 }
+/* ===== END PALETTE ===== */
 
-/* ============================================================ TYPE
- *
- * One face in several weights, Plus Jakarta Sans. To change it, replace the
+/* ===== TYPE ===== */
+/* One face in several weights, Plus Jakarta Sans. To change it, replace the
  * Google Fonts <link> in the <head> of every page, then the name below. */
 body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
+/* ===== END TYPE ===== */
 
-/* ============================================================ THE MESH
- *
- * The shapes beside the headline, the case study and each service: gradients in
+/* ===== THE MESH ===== */
+/* The shapes beside the headline, the case study and each service: gradients in
  * your theme's own colors. Move the percentages and watch what changes. */
 .mesh {
   background-color: var(--color-base-200);
@@ -74,10 +72,10 @@ body {
     radial-gradient(at 10% 0%, color-mix(in oklch, var(--color-accent) 45%, transparent), transparent 55%),
     radial-gradient(at 100% 100%, color-mix(in oklch, var(--color-secondary) 55%, transparent), transparent 50%);
 }
+/* ===== END THE MESH ===== */
 
-/* ============================================================ PRICING SWITCH
- *
- * The monthly/yearly toggle on services.html. :has() swaps the price; no JavaScript. */
+/* ===== PRICING SWITCH ===== */
+/* The monthly/yearly toggle on services.html. :has() swaps the price; no JavaScript. */
 .price-yearly {
   display: none;
 }
@@ -87,10 +85,10 @@ main:has(#yearly:checked) .price-monthly {
 main:has(#yearly:checked) .price-yearly {
   display: inline;
 }
+/* ===== END PRICING SWITCH ===== */
 
-/* ============================================================ THE FORM
- *
- * Budget choices: the real radio is hidden inside each label, so these rules show
+/* ===== THE FORM ===== */
+/* Budget choices: the real radio is hidden inside each label, so these rules show
  * which one is picked and where the keyboard is. Keep the focus ring. */
 .choice:has(:checked) {
   background-color: var(--color-primary);
@@ -101,10 +99,10 @@ main:has(#yearly:checked) .price-yearly {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
+/* ===== END THE FORM ===== */
 
-/* ============================================================ CAROUSELS
- *
- * daisyUI's .carousel is a sideways scroller that snaps to each slide. js/site.js
+/* ===== CAROUSELS ===== */
+/* daisyUI's .carousel is a sideways scroller that snaps to each slide. js/site.js
  * adds the arrows and dots; these rules dress them. */
 [data-carousel] .carousel {
   position: relative; /* site.js measures each slide from here */
@@ -141,10 +139,10 @@ main:has(#yearly:checked) .price-yearly {
 [data-pause][aria-pressed='true'] .i-play {
   display: block;
 }
+/* ===== END CAROUSELS ===== */
 
-/* ============================================================ NAV OVER THE HERO
- *
- * index-2.html's nav: white on the photo, then the page's own colors once the
+/* ===== NAV OVER THE HERO ===== */
+/* index-2.html's nav: white on the photo, then the page's own colors once the
  * photo has scrolled under it (.is-solid, set by js/site.js). */
 .nav-over {
   position: absolute;
@@ -167,10 +165,10 @@ main:has(#yearly:checked) .price-yearly {
 .nav-over .dropdown-content {
   color: var(--color-base-content);
 }
+/* ===== END NAV OVER THE HERO ===== */
 
-/* ============================================================ MOTION
- *
- * Anything marked data-reveal fades up as it scrolls into view; "left",
+/* ===== MOTION ===== */
+/* Anything marked data-reveal fades up as it scrolls into view; "left",
  * "right" or "zoom" change how it arrives. js/site.js puts .reveal-on on <html>
  * first, so with no script, or for a reader who asks for less motion, nothing
  * is ever hidden. */
@@ -209,10 +207,10 @@ main:has(#yearly:checked) .price-yearly {
 [data-sticky-nav].is-scrolled {
   box-shadow: 0 12px 30px -18px rgb(0 0 0 / 0.35);
 }
+/* ===== END MOTION ===== */
 
-/* ============================================================ THE HIGHLIGHTER
- *
- * The marker stroke under the hero's key words, drawn left to right as the page
+/* ===== THE HIGHLIGHTER ===== */
+/* The marker stroke under the hero's key words, drawn left to right as the page
  * opens. It sits low, under the letters, so the words keep their contrast. */
 .mark-sweep {
   background-image: linear-gradient(color-mix(in oklch, var(--color-primary) 20%, transparent), color-mix(in oklch, var(--color-primary) 20%, transparent));
@@ -226,10 +224,10 @@ main:has(#yearly:checked) .price-yearly {
     background-size: 0 0.3em;
   }
 }
+/* ===== END THE HIGHLIGHTER ===== */
 
-/* ============================================================ BEFORE AND AFTER
- *
- * Two photos stacked in .compare. The top one (.compare-after) is cut back to
+/* ===== BEFORE AND AFTER ===== */
+/* Two photos stacked in .compare. The top one (.compare-after) is cut back to
  * the right of --split, which js/business.js sets from the range input. Both
  * photos need the same size and framing, or the line shows a jump. */
 .compare {
@@ -307,10 +305,10 @@ main:has(#yearly:checked) .price-yearly {
   outline: 3px solid var(--color-primary);
   outline-offset: 4px;
 }
+/* ===== END BEFORE AND AFTER ===== */
 
-/* ============================================================ THE MARQUEE
- *
- * The client names. With no script they sit centered and still; once
+/* ===== THE MARQUEE ===== */
+/* The client names. With no script they sit centered and still; once
  * js/business.js has copied the list (.is-moving), the two copies slide left
  * together and loop. --marquee-time is one lap: longer is calmer. */
 .marquee {
@@ -359,10 +357,10 @@ main:has(#yearly:checked) .price-yearly {
 [data-marquee-pause][aria-pressed='true'] .i-play {
   display: block;
 }
+/* ===== END THE MARQUEE ===== */
 
-/* ============================================================ THE SPOTLIGHT
- *
- * A soft circle of your primary color under the mouse, on a card marked
+/* ===== THE SPOTLIGHT ===== */
+/* A soft circle of your primary color under the mouse, on a card marked
  * data-spotlight. js/business.js says where the mouse is (--x, --y). */
 [data-spotlight] {
   position: relative;
@@ -382,10 +380,10 @@ main:has(#yearly:checked) .price-yearly {
 [data-spotlight]:hover::before {
   opacity: 1;
 }
+/* ===== END THE SPOTLIGHT ===== */
 
-/* ============================================================ THE FEATURED PLAN
- *
- * The plan most clients pick wears a border of your three colors, which turns
+/* ===== THE FEATURED PLAN ===== */
+/* The plan most clients pick wears a border of your three colors, which turns
  * three times as the page opens and then rests. The turning is an angle
  * (--angle) that CSS animates, because @property tells it --angle is one. */
 @property --angle {
@@ -405,10 +403,10 @@ main:has(#yearly:checked) .price-yearly {
     --angle: 360deg;
   }
 }
+/* ===== END THE FEATURED PLAN ===== */
 
-/* ============================================================ COMPARE THE PLANS
- *
- * A real <table>. On a phone it scrolls sideways inside its own box, and the
+/* ===== COMPARE THE PLANS ===== */
+/* A real <table>. On a phone it scrolls sideways inside its own box, and the
  * row names stay pinned at the left so you always know what a tick is for.
  * The plan most clients pick is tinted through its <col>. */
 .plans tbody th {
@@ -424,10 +422,10 @@ main:has(#yearly:checked) .price-yearly {
   position: static;
   background: var(--color-base-200);
 }
+/* ===== END COMPARE THE PLANS ===== */
 
-/* ============================================================ BACK TO TOP
- *
- * The round button in the corner. Its ring fills as you read down the page
+/* ===== BACK TO TOP ===== */
+/* The round button in the corner. Its ring fills as you read down the page
  * (--progress, 0 to 1, from js/site.js). Hidden until you have scrolled. */
 .to-top {
   position: fixed;
@@ -459,10 +457,10 @@ main:has(#yearly:checked) .price-yearly {
     bottom: 1.5rem;
   }
 }
+/* ===== END BACK TO TOP ===== */
 
-/* ============================================================ LIGHTBOX
- *
- * Photos inside data-lightbox open large on the page instead of on their own.
+/* ===== LIGHTBOX ===== */
+/* Photos inside data-lightbox open large on the page instead of on their own.
  * Each is a link to the full image, so with no script the link still works.
  * js/site.js builds the viewer, a <dialog>, the first time it is needed. */
 [data-lightbox] a {
@@ -542,8 +540,9 @@ html:has(.lightbox[open]) {
     transform: scale(0.97);
   }
 }
+/* ===== END LIGHTBOX ===== */
 
-/* ============================================================ EVERYTHING ELSE */
+/* ===== EVERYTHING ELSE ===== */
 
 /* Labels at full strength. daisyUI's dimmed 12px labels measured 4.23:1 on the
  * contact form, under 4.5:1. Keep this rule. */
@@ -600,3 +599,4 @@ html {
     animation: none;
   }
 }
+/* ===== END EVERYTHING ELSE ===== */

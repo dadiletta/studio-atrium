@@ -34,11 +34,13 @@
          COPY FROM HERE and TO HERE), then delete it and the nav's Elements links. -->
     <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
 
-    <!-- THE NAV, centered: the name in the middle, the links split either side.
+    <!-- ===== NAV ===== -->
+    <!-- Centered: the name in the middle, the links split either side.
          To use it, put it in place of the nav at the top of every page. -->
     <nav data-sticky-nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
       <div class="navbar-start flex-1 w-auto">
-        <!-- HOMES: each home page has its own hero. Keep the one you like best
+        <!-- ===== HOMES MENU (wide screens) ===== -->
+        <!-- Each home page has its own hero. Keep the one you like best
              as index.html, then delete the rest and this dropdown. -->
         <details class="dropdown hidden md:block">
           <summary class="btn btn-ghost text-inherit text-base font-normal gap-1">Homes <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -68,10 +70,14 @@
             </ul>
           </div>
         </details>
+        <!-- ===== END HOMES MENU (wide screens) ===== -->
+        <!-- ===== LINKS, LEFT (wide screens) ===== -->
         <ul class="menu menu-horizontal hidden md:flex gap-1 text-base">
           <li><a href="services.html">Services</a></li>
           <li><a href="work.html">Work</a></li>
         </ul>
+        <!-- ===== END LINKS, LEFT (wide screens) ===== -->
+        <!-- ===== PHONE MENU ===== -->
         <details class="dropdown md:hidden">
           <summary class="btn btn-ghost text-inherit btn-square" aria-label="Site pages"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
           <ul class="menu dropdown-content bg-base-200 rounded-box z-40 mt-3 w-56 p-2 shadow-xl text-base">
@@ -87,6 +93,7 @@
             <li><a href="elements.html" aria-current="page">Elements</a></li>
           </ul>
         </details>
+        <!-- ===== END PHONE MENU ===== -->
       </div>
       <div class="navbar-center">
         <a class="flex items-center gap-2 text-xl font-extrabold tracking-tight" href="index.html">
@@ -95,14 +102,17 @@
         </a>
       </div>
       <div class="navbar-end flex-1 w-auto gap-2">
+        <!-- ===== LINKS, RIGHT (wide screens) ===== -->
         <ul class="menu menu-horizontal hidden lg:flex gap-1 text-base">
           <li><a href="services.html#pricing">Pricing</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="elements.html" aria-current="page">Elements</a></li>
         </ul>
+        <!-- ===== END LINKS, RIGHT (wide screens) ===== -->
         <a class="btn btn-primary btn-sm md:btn-md" href="contact.html">Talk to us</a>
       </div>
     </nav>
+    <!-- ===== END NAV ===== -->
 
     <main id="main">
       <header class="bg-base-200 border-b border-base-content/10">
@@ -507,7 +517,8 @@
       <!-- ==================================================== COPY FROM HERE: BEFORE AND AFTER -->
       <section class="max-w-4xl mx-auto px-6 py-12" aria-labelledby="ba-title">
         <h2 id="ba-title" class="tracking-tight text-3xl md:text-4xl font-bold mb-8">Before and after</h2>
-        <!-- BEFORE AND AFTER: two photos of the same thing, from the same spot, at
+        <!-- ===== BEFORE AND AFTER ===== -->
+        <!-- Two photos of the same thing, from the same spot, at
              the same size. The "before" comes first; the "after" (.compare-after)
              sits on top, and js/business.js moves the line between them. Swap both
              photos and both credits. Show your own work, never somebody else's
@@ -525,6 +536,7 @@
           </div>
           <figcaption class="mt-4 text-sm opacity-80">Drag the line, or press Tab to reach it and use the arrow keys.</figcaption>
         </figure>
+        <!-- ===== END BEFORE AND AFTER ===== -->
       </section>
       <!-- ==================================================== TO HERE: BEFORE AND AFTER -->
 
@@ -593,7 +605,8 @@
       <!-- ==================================================== COPY FROM HERE: COMPARE THE PLANS -->
       <section class="max-w-6xl mx-auto px-6 py-12" aria-labelledby="compare-title">
         <h2 id="compare-title" class="tracking-tight text-3xl md:text-4xl font-bold mb-8">Compare the plans</h2>
-        <!-- COMPARE THE PLANS: the cards above sell, this table answers. A real
+        <!-- ===== COMPARE THE PLANS ===== -->
+        <!-- The cards above sell, this table answers. A real
              <table>: the plan names are column headers (scope="col"), each line
              names its row (scope="row"), and a tick also says "Included" to a
              screen reader. On a phone it scrolls sideways inside its own box;
@@ -635,6 +648,7 @@
             </tbody>
           </table>
         </div>
+        <!-- ===== END COMPARE THE PLANS ===== -->
       </section>
       <!-- ==================================================== TO HERE: COMPARE THE PLANS -->
 
@@ -654,6 +668,7 @@
 
     </main>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="bg-base-200 text-base-content border-t border-base-content/10">
       <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
@@ -687,7 +702,8 @@
             <p>123 Your Street, Your City</p>
           </address>
         </div>
-        <!-- THE SIGNUP says thank you without sending (data-demo). Point action at
+        <!-- ===== SIGNUP ===== -->
+        <!-- Says thank you without sending (data-demo). Point action at
              a real service and delete data-demo, or delete this block. -->
         <form data-demo>
           <h2 class="footer-title">One useful email a month</h2>
@@ -699,9 +715,11 @@
           <p class="text-sm opacity-80 mt-2">Say what is in it. Unsubscribe any time.</p>
           <p data-sent hidden role="status" tabindex="-1" class="text-sm mt-2 font-semibold">Thanks — the next one is yours.</p>
         </form>
+        <!-- ===== END SIGNUP ===== -->
       </div>
 
-      <!-- CREDITS: creator, source, license and changes for every borrowed thing.
+      <!-- ===== CREDITS ===== -->
+      <!-- Creator, source, license and changes for every borrowed thing.
            Swap a picture, swap its line. Can't write the line? Don't use it. -->
       <div class="border-t border-base-content/10">
         <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-start md:justify-between gap-4 text-sm">
@@ -720,9 +738,12 @@
           </details>
         </div>
       </div>
+      <!-- ===== END CREDITS ===== -->
     </footer>
+    <!-- ===== END FOOTER ===== -->
 
-    <!-- BACK TO TOP: hidden until js/site.js shows it, once you have scrolled. -->
+    <!-- ===== BACK TO TOP ===== -->
+    <!-- Hidden until js/site.js shows it, once you have scrolled. -->
     <a class="to-top" href="#top" data-to-top hidden aria-label="Back to top"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
 
     <script src="js/site.js"></script>

@@ -24,6 +24,7 @@
   <body class="bg-base-100 text-base-content">
     <a class="skip-link btn btn-primary" href="#main">Skip to content</a>
 
+    <!-- ===== NAV ===== -->
     <nav data-sticky-nav class="navbar bg-base-100/85 backdrop-blur sticky top-0 z-30 px-4 md:px-8 border-b border-base-content/10" aria-label="Main">
       <div class="navbar-start w-auto shrink-0">
         <!-- The logo, an inline SVG that recolors with the theme. Swap it for your
@@ -34,7 +35,8 @@
         </a>
       </div>
       <div class="navbar-end flex-1 w-auto gap-2">
-        <!-- HOMES: each home page has its own hero. Keep the one you like best
+        <!-- ===== HOMES MENU (wide screens) ===== -->
+        <!-- Each home page has its own hero. Keep the one you like best
              as index.html, then delete the rest and this dropdown. -->
         <details class="dropdown dropdown-end hidden lg:block">
           <summary class="btn btn-ghost text-inherit text-base font-normal gap-1">Homes <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -64,6 +66,8 @@
             </ul>
           </div>
         </details>
+        <!-- ===== END HOMES MENU (wide screens) ===== -->
+        <!-- ===== LINKS (wide screens) ===== -->
         <ul class="menu menu-horizontal hidden lg:flex gap-1 text-base">
           <li><a href="services.html" aria-current="page">Services</a></li>
           <li><a href="work.html">Work</a></li>
@@ -71,7 +75,9 @@
           <li><a href="contact.html">Contact</a></li>
           <li><a href="elements.html">Elements</a></li>
         </ul>
+        <!-- ===== END LINKS (wide screens) ===== -->
         <a class="btn btn-primary btn-sm md:btn-md" href="contact.html">Talk to us</a>
+        <!-- ===== PHONE MENU ===== -->
         <details class="dropdown dropdown-end lg:hidden">
           <summary class="btn btn-ghost text-inherit btn-square" aria-label="Site pages"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
           <ul class="menu dropdown-content bg-base-100 text-base-content border border-base-content/10 rounded-box z-40 mt-3 w-56 p-2 shadow-xl text-base">
@@ -87,9 +93,12 @@
             <li><a href="elements.html">Elements</a></li>
           </ul>
         </details>
+        <!-- ===== END PHONE MENU ===== -->
       </div>
     </nav>
+    <!-- ===== END NAV ===== -->
 
+    <!-- ===== PAGE HEADER ===== -->
     <!-- A page header, not a second hero: only the home page gets the big
          treatment. -->
     <header class="relative overflow-hidden bg-base-100 py-16 md:py-24 border-b border-base-content/10">
@@ -100,8 +109,10 @@
         <p class="text-lg opacity-80 max-w-xl">One sentence: what the three have in common, and who they are for.</p>
       </div>
     </header>
+    <!-- ===== END PAGE HEADER ===== -->
 
     <main id="main" class="max-w-6xl mx-auto px-6 py-8 md:py-12">
+      <!-- ===== SERVICE 1 ===== -->
       <!-- ONE SERVICE, repeated three times. Keep the parts in the same order in
            each, so a reader who learns the shape once can skim the other two. -->
       <section id="first" class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center py-16 border-b border-base-content/10">
@@ -124,6 +135,8 @@
           </dl>
         </div>
       </section>
+      <!-- ===== END SERVICE 1 ===== -->
+      <!-- ===== SERVICE 2 ===== -->
       <section id="second" class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center py-16 border-b border-base-content/10">
         <div class="mesh mesh-alt aspect-[4/3] rounded-3xl grid place-items-center md:order-last" aria-hidden="true" data-reveal="zoom">
           <span class="grid place-items-center size-24 rounded-3xl bg-base-100 text-primary shadow-xl"><svg class="size-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg></span>
@@ -144,6 +157,8 @@
           </dl>
         </div>
       </section>
+      <!-- ===== END SERVICE 2 ===== -->
+      <!-- ===== SERVICE 3 ===== -->
       <section id="third" class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center py-16 border-b border-base-content/10">
         <div class="mesh aspect-[4/3] rounded-3xl grid place-items-center " aria-hidden="true" data-reveal="zoom">
           <span class="grid place-items-center size-24 rounded-3xl bg-base-100 text-primary shadow-xl"><svg class="size-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
@@ -164,9 +179,10 @@
           </dl>
         </div>
       </section>
+      <!-- ===== END SERVICE 3 ===== -->
 
-      <!-- ============================================================ PROCESS
-           Four steps is the most anybody reads. -->
+      <!-- ===== PROCESS ===== -->
+      <!-- Four steps is the most anybody reads. -->
       <section class="py-20 md:py-28">
         <div class="max-w-2xl mb-12">
           <p class="text-primary font-bold uppercase tracking-widest text-xs mb-3">How it goes</p>
@@ -179,9 +195,10 @@
           <li class="step"><span class="md:px-4"><strong class="block">Handover</strong><span class="text-sm opacity-80">What "done" means</span></span></li>
         </ul>
       </section>
+      <!-- ===== END PROCESS ===== -->
 
-      <!-- ============================================================ PRICING
-           Three tiers; mark the middle one only if true. Monthly/yearly is a
+      <!-- ===== PRICING ===== -->
+      <!-- Three tiers; mark the middle one only if true. Monthly/yearly is a
            checkbox and two :has() rules in styles.css. Keep grow-0 and mt-auto:
            they line the prices up. -->
       <section id="pricing" class="py-20 md:py-28 border-t border-base-content/10">
@@ -243,7 +260,8 @@
           </div>
         </div>
 
-        <!-- COMPARE THE PLANS: the cards above sell, this table answers. A real
+        <!-- ===== COMPARE THE PLANS ===== -->
+        <!-- The cards above sell, this table answers. A real
              <table>: the plan names are column headers (scope="col"), each line
              names its row (scope="row"), and a tick also says "Included" to a
              screen reader. On a phone it scrolls sideways inside its own box;
@@ -285,9 +303,12 @@
             </tbody>
           </table>
         </div>
+        <!-- ===== END COMPARE THE PLANS ===== -->
       </section>
+      <!-- ===== END PRICING ===== -->
     </main>
 
+    <!-- ===== THE ASK ===== -->
     <section class="px-6 py-20 md:py-28">
       <div class="cta-panel max-w-5xl mx-auto rounded-3xl px-8 py-16 md:py-20 text-center">
         <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">Not sure which one?</h2>
@@ -295,7 +316,9 @@
         <a class="btn btn-lg" href="contact.html">Talk to us</a>
       </div>
     </section>
+    <!-- ===== END THE ASK ===== -->
 
+    <!-- ===== FOOTER ===== -->
     <footer class="bg-base-200 text-base-content border-t border-base-content/10">
       <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
@@ -329,7 +352,8 @@
             <p>123 Your Street, Your City</p>
           </address>
         </div>
-        <!-- THE SIGNUP says thank you without sending (data-demo). Point action at
+        <!-- ===== SIGNUP ===== -->
+        <!-- Says thank you without sending (data-demo). Point action at
              a real service and delete data-demo, or delete this block. -->
         <form data-demo>
           <h2 class="footer-title">One useful email a month</h2>
@@ -341,9 +365,11 @@
           <p class="text-sm opacity-80 mt-2">Say what is in it. Unsubscribe any time.</p>
           <p data-sent hidden role="status" tabindex="-1" class="text-sm mt-2 font-semibold">Thanks — the next one is yours.</p>
         </form>
+        <!-- ===== END SIGNUP ===== -->
       </div>
 
-      <!-- CREDITS: creator, source, license and changes for every borrowed thing.
+      <!-- ===== CREDITS ===== -->
+      <!-- Creator, source, license and changes for every borrowed thing.
            Swap a picture, swap its line. Can't write the line? Don't use it. -->
       <div class="border-t border-base-content/10">
         <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-start md:justify-between gap-4 text-sm">
@@ -362,9 +388,12 @@
           </details>
         </div>
       </div>
+      <!-- ===== END CREDITS ===== -->
     </footer>
+    <!-- ===== END FOOTER ===== -->
 
-    <!-- BACK TO TOP: hidden until js/site.js shows it, once you have scrolled. -->
+    <!-- ===== BACK TO TOP ===== -->
+    <!-- Hidden until js/site.js shows it, once you have scrolled. -->
     <a class="to-top" href="#top" data-to-top hidden aria-label="Back to top"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
 
     <script src="js/site.js"></script>
